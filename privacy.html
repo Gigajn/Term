@@ -1,19 +1,100 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kebijakan Privasi</title><style>:root{color-scheme:light dark;--fg:#1d1d1f;--bg:#fafaf7;--mut:#5b5b5b;--acc:#7a4b1f}@media (prefers-color-scheme:dark){:root{--fg:#ececec;--bg:#161514;--mut:#a8a8a8;--acc:#e0a86b}}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}main{max-width:720px;margin:0 auto;padding:40px 16px 64px}h1{font-size:1.8rem;margin:0 0 4px}h2{font-size:1.15rem;margin:28px 0 6px}p,li{color:var(--fg)}.mut{color:var(--mut)}a{color:var(--acc)}nav{display:flex;gap:16px;margin:24px 0 8px;flex-wrap:wrap}</style></head><body><main>
-<h1>Kebijakan Privasi</h1><p class="mut">Kasir ESTD Suwastio · berlaku sejak 27 September 2026</p><nav><a href="index.html">Beranda</a><a href="privacy.html">Kebijakan Privasi</a><a href="terms.html">Ketentuan Layanan</a></nav>
-<p>Kebijakan ini menjelaskan data apa yang dipakai aplikasi Kasir ESTD Suwastio ("aplikasi"), aplikasi kasir internal milik ESTD Suwastio yang hanya digunakan oleh pemilik dan karyawan toko.</p>
-<h2>Data yang kami kumpulkan</h2><ul>
-<li><b>Dari akun Google</b> saat Anda memilih "Masuk dengan Google": nama, alamat email, dan foto profil. Kami tidak meminta akses ke Gmail, Drive, kontak, atau data Google lain milik Anda.</li>
-<li><b>Data kerja</b>: jam login dan logout (dicatat sebagai jam shift), transaksi penjualan, stok, dan pengeluaran toko yang Anda catat.</li>
-<li><b>Foto nota</b> yang Anda pilih untuk dibaca otomatis (fitur opsional).</li></ul>
-<h2>Cara data digunakan</h2><ul>
-<li>Masuk ke aplikasi dan menentukan peran Anda (pemilik, admin kios, kasir).</li>
-<li>Menyusun dan mengirim laporan kerja ke email Anda sendiri.</li>
-<li>Foto nota dikirim ke Google Gemini API hanya untuk dibaca isinya, lalu hasilnya disimpan sebagai data transaksi.</li></ul>
-<p>Data tidak dijual, tidak dipakai untuk iklan, dan tidak dibagikan kepada pihak lain di luar penyedia layanan berikut.</p>
-<h2>Penyedia layanan</h2><ul>
-<li><b>Supabase</b>: database dan login (server di Singapura).</li>
-<li><b>Google</b>: login dengan Google, pengiriman email laporan melalui Gmail API dari akun toko, dan Gemini API untuk membaca foto.</li></ul>
-<h2>Penyimpanan &amp; keamanan</h2><p>Data disimpan di database yang dilindungi kata sandi dan aturan akses per peran. Karyawan hanya melihat data kiosnya sendiri. Data disimpan selama diperlukan untuk pembukuan toko.</p>
-<h2>Hak Anda</h2><p>Anda dapat meminta salinan atau penghapusan data akun Anda dengan menghubungi pemilik toko di alamat di bawah. Akses Google dapat dicabut kapan saja di <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p>
-<h2>Kontak</h2><p>EMAIL-KONTAK@gmail.com</p>
-</main></body></html>
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Kebijakan Privasi</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+            --fg: #1d1d1f;
+            --bg: #fafaf7;
+            --mut: #5b5b5b;
+            --acc: #7a4b1f
+        }
+
+        @media (prefers-color-scheme:dark) {
+            :root {
+                --fg: #ececec;
+                --bg: #161514;
+                --mut: #a8a8a8;
+                --acc: #e0a86b
+            }
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--fg);
+            font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif
+        }
+
+        main {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 16px 64px
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin: 0 0 4px
+        }
+
+        h2 {
+            font-size: 1.15rem;
+            margin: 28px 0 6px
+        }
+
+        p,
+        li {
+            color: var(--fg)
+        }
+
+        .mut {
+            color: var(--mut)
+        }
+
+        a {
+            color: var(--acc)
+        }
+
+        nav {
+            display: flex;
+            gap: 16px;
+            margin: 24px 0 8px;
+            flex-wrap: wrap
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Kebijakan Privasi</h1>
+        <p class="mut">Kasir ESTD Suwastio · berlaku sejak 27 September 2026</p>
+        <nav><a href="index.html">Beranda</a><a href="privacy.html">Kebijakan Privasi</a><a href="terms.html">Ketentuan
+                Layanan</a></nav>
+        <p>Kebijakan ini menjelaskan data apa yang dipakai aplikasi Kasir ESTD Suwastio ("aplikasi"), aplikasi kasir
+            internal milik ESTD Suwastio yang hanya digunakan oleh pemilik dan karyawan toko.</p>
+        <h2>Data yang kami kumpulkan</h2>
+        <ul>
+            <li><b>Dari akun Google</b> saat Anda memilih "Masuk dengan Google": nama, alamat email, dan foto profil.
+                Kami tidak meminta akses ke Gmail, Drive, kontak, atau data Google lain milik Anda.</li>
+            <li><b>Data kerja</b>: jam login dan logout (dicatat sebagai jam shift), transaksi penjualan, stok, dan
+                pengeluaran toko yang Anda catat.</li>
+        </ul>
+        <p>Data tidak dijual, tidak dipakai untuk iklan, dan tidak dibagikan kepada pihak lain di luar penyedia layanan
+            berikut.</p>
+        <h2>Penyimpanan &amp; keamanan</h2>
+        <p>Data disimpan di database yang dilindungi kata sandi dan aturan akses per peran. Karyawan hanya melihat data
+            kiosnya sendiri. Data disimpan selama diperlukan untuk pembukuan toko.</p>
+        <h2>Hak Anda</h2>
+        <p>Anda dapat meminta salinan atau penghapusan data akun Anda dengan menghubungi pemilik toko di alamat di
+            bawah. Akses Google dapat dicabut kapan saja di <a
+                href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p>
+        <h2>Kontak</h2>
+        <p>estdsuwastio@gmail.com</p>
+    </main>
+</body>
+
+</html>
