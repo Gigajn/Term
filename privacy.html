@@ -2,99 +2,79 @@
 <html lang="id">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Kebijakan Privasi</title>
-    <style>
-        :root {
-            color-scheme: light dark;
-            --fg: #1d1d1f;
-            --bg: #fafaf7;
-            --mut: #5b5b5b;
-            --acc: #7a4b1f
-        }
-
-        @media (prefers-color-scheme:dark) {
-            :root {
-                --fg: #ececec;
-                --bg: #161514;
-                --mut: #a8a8a8;
-                --acc: #e0a86b
-            }
-        }
-
-        body {
-            margin: 0;
-            background: var(--bg);
-            color: var(--fg);
-            font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif
-        }
-
-        main {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 40px 16px 64px
-        }
-
-        h1 {
-            font-size: 1.8rem;
-            margin: 0 0 4px
-        }
-
-        h2 {
-            font-size: 1.15rem;
-            margin: 28px 0 6px
-        }
-
-        p,
-        li {
-            color: var(--fg)
-        }
-
-        .mut {
-            color: var(--mut)
-        }
-
-        a {
-            color: var(--acc)
-        }
-
-        nav {
-            display: flex;
-            gap: 16px;
-            margin: 24px 0 8px;
-            flex-wrap: wrap
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kebijakan Privasi · GIGFLOW</title>
+  <!-- Token desain v2 (--gf-*) dan Plus Jakarta Sans self-host; satu tema terang. -->
+  <link rel="stylesheet" href="gf-tokens.css">
+  <link rel="stylesheet" href="site.css">
 </head>
 
 <body>
-    <main>
-        <h1>Kebijakan Privasi</h1>
-        <p class="mut">GIGFLOW · berlaku sejak 27 September 2026</p>
-        <nav><a href="index.html">Beranda</a><a href="privacy.html">Kebijakan Privasi</a><a href="terms.html">Ketentuan
-                Layanan</a></nav>
-        <p>Kebijakan ini menjelaskan data apa yang dipakai aplikasi GIGFLOW ("aplikasi"), aplikasi kasir
-            internal milik ESTD Suwastio yang hanya digunakan oleh pemilik dan karyawan toko.</p>
-        <h2>Data yang kami kumpulkan</h2>
-        <ul>
-            <li><b>Dari akun Google</b> saat Anda memilih "Masuk dengan Google": nama, alamat email, dan foto profil.
-                Kami tidak meminta akses ke Gmail, Drive, kontak, atau data Google lain milik Anda.</li>
-            <li><b>Data kerja</b>: jam login dan logout (dicatat sebagai jam shift), transaksi penjualan, stok, dan
-                pengeluaran toko yang Anda catat.</li>
-        </ul>
-        <p>Data tidak dijual, tidak dipakai untuk iklan, dan tidak dibagikan kepada pihak lain di luar penyedia layanan
-            berikut.</p>
-        <h2>Penyimpanan &amp; keamanan</h2>
-        <p>Data disimpan di database yang dilindungi kata sandi dan aturan akses per peran. Karyawan hanya melihat data
-            kiosnya sendiri. Data disimpan selama diperlukan untuk pembukuan toko.</p>
-        <h2>Hak Anda</h2>
-        <p>Anda dapat meminta salinan atau penghapusan data akun Anda dengan menghubungi pemilik toko di alamat di
-            bawah. Akses Google dapat dicabut kapan saja di <a
-                href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p>
-        <h2>Kontak</h2>
-        <p>estdsuwastio@gmail.com</p>
-    </main>
+  <a class="skip" href="#isi">Langsung ke isi</a>
+
+  <header class="top">
+    <div class="wrap top__bar">
+      <a class="brand" href="index.html" aria-label="GIGFLOW, beranda">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <rect class="m-bg" width="32" height="32" rx="8" />
+          <path class="m-fg" d="M16 7a9 9 0 1 0 8.8 10.9H16v-3.6h12.4A12.6 12.6 0 1 1 16 3.4z" transform="translate(1.2 1.6) scale(.92)" />
+        </svg>
+        <span>GIGFLOW</span>
+      </a>
+      <nav class="nav" aria-label="Utama">
+        <a href="index.html#fitur">Fitur</a>
+        <a href="harga.html">Harga</a>
+        <a href="privacy.html" aria-current="page">Kebijakan Privasi</a>
+        <a href="terms.html">Ketentuan Layanan</a>
+      </nav>
+      <div class="top__actions">
+        <a class="btn btn--primary btn--sm" href="daftar.html" data-cta="daftar">Coba gratis</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="isi" class="wrap">
+    <article class="prose">
+      <h1>Kebijakan Privasi</h1>
+      <p class="mut">GIGFLOW · berlaku sejak 27 September 2026</p>
+      <p>Kebijakan ini menjelaskan data apa yang dipakai aplikasi GIGFLOW ("aplikasi"), aplikasi kasir
+          internal milik ESTD Suwastio yang hanya digunakan oleh Owner Merchant dan staf merchant.</p>
+      <h2>Data yang kami kumpulkan</h2>
+      <ul>
+          <li><b>Dari akun Google</b> saat Anda memilih "Masuk dengan Google": nama, alamat email, dan foto profil.
+              Kami tidak meminta akses ke Gmail, Drive, kontak, atau data Google lain milik Anda.</li>
+          <li><b>Data kerja</b>: jam login dan logout (dicatat sebagai jam shift), transaksi penjualan, stok, dan
+              pengeluaran outlet yang Anda catat.</li>
+      </ul>
+      <p>Data tidak dijual, tidak dipakai untuk iklan, dan tidak dibagikan kepada pihak lain di luar penyedia layanan
+          berikut.</p>
+      <h2>Penyimpanan &amp; keamanan</h2>
+      <p>Data disimpan di database yang dilindungi kata sandi dan aturan akses per peran. Karyawan hanya melihat data
+          outletnya sendiri. Data disimpan selama diperlukan untuk pembukuan merchant.</p>
+      <h2>Hak Anda</h2>
+      <p>Anda dapat meminta salinan atau penghapusan data akun Anda dengan menghubungi Owner Merchant di alamat di
+          bawah. Akses Google dapat dicabut kapan saja di <a
+              href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p>
+      <h2>Kontak</h2>
+      <p><a href="mailto:estdsuwastio@gmail.com">estdsuwastio@gmail.com</a></p>
+
+    </article>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__grid">
+      <div>
+        <p><strong>GIGFLOW</strong></p>
+        <p>Kontak: <a href="mailto:estdsuwastio@gmail.com">estdsuwastio@gmail.com</a></p>
+      </div>
+      <nav class="foot__links" aria-label="Tautan kaki halaman">
+        <a href="index.html">Beranda</a>
+        <a href="privacy.html">Kebijakan Privasi</a>
+        <a href="terms.html">Ketentuan Layanan</a>
+      </nav>
+    </div>
+  </footer>
 </body>
 
 </html>

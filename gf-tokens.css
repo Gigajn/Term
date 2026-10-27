@@ -1,0 +1,139 @@
+/* Token desain terpadu GIGFLOW (sistem desain v2, Bagian A dan B).
+   BERKAS HASIL GENERATOR, JANGAN DIEDIT TANGAN. Sumber nilai:
+   lib/core/theme/gf_tokens.dart (GfTokens) lewat
+   lib/core/theme/gf_tokens_css.dart. Tulis ulang web-kasir/src/gf-tokens.css
+   dan site/gf-tokens.css dengan:
+     UPDATE_GF_CSS=1 flutter test test/core/theme/gf_css_tokens_test.dart
+   Tes yang sama gagal bila isi berkas berbeda dari GfTokens.
+   Satu tema terang. Font: Plus Jakarta Sans (OFL, fonts/OFL.txt), variable
+   WOFF2 subset Latin yang di-host sendiri. */
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url('fonts/plus-jakarta-sans-latin-wght.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2190-2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  color-scheme: light;
+  --gf-font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Warna netral */
+  --gf-bg: #F8FAFC;
+  --gf-surface: #FFFFFF;
+  --gf-surface-2: #F1F5F9;
+  --gf-border: #E2E8F0;
+  --gf-border-input: #7C8799;
+  --gf-text: #0F172A;
+  --gf-text-2: #475569;
+  --gf-text-3: #64748B; /* jangan di atas surface-2 (4,34:1) */
+  --gf-text-disabled: #94A3B8; /* hanya teks kontrol mati */
+  --gf-inverse: #0F172A;
+  --gf-on-inverse: #FFFFFF;
+
+  /* Merek dan aksi */
+  --gf-primary: #1565C0;
+  --gf-on-primary: #FFFFFF;
+  --gf-primary-pressed: #0D47A1;
+  --gf-primary-soft: #E3F2FD;
+  --gf-on-primary-soft: #0D47A1;
+  --gf-brand-logo: #1E88E5; /* logo dan ilustrasi saja, bukan teks */
+  --gf-highlight: #C2410C;
+  --gf-on-highlight: #FFFFFF;
+  --gf-highlight-soft: #FFEDD5;
+  --gf-on-highlight-soft: #9A3412;
+
+  /* Status */
+  --gf-success: #047857;
+  --gf-on-success: #FFFFFF;
+  --gf-success-soft: #D1FAE5;
+  --gf-on-success-soft: #065F46;
+  --gf-warning: #B45309;
+  --gf-on-warning: #FFFFFF;
+  --gf-warning-soft: #FEF3C7;
+  --gf-on-warning-soft: #92400E;
+  --gf-danger: #DC2626;
+  --gf-on-danger: #FFFFFF;
+  --gf-danger-text: #B91C1C; /* teks merah ukuran kecil */
+  --gf-danger-soft: #FEE2E2;
+  --gf-on-danger-soft: #991B1B;
+  --gf-info: #1565C0;
+  --gf-info-soft: #E3F2FD;
+  --gf-on-info-soft: #0D47A1;
+  --gf-focus-ring: #1565C0;
+
+  /* Spasi (kelipatan 4) */
+  --gf-space-4: 4px;
+  --gf-space-8: 8px;
+  --gf-space-12: 12px;
+  --gf-space-16: 16px;
+  --gf-space-24: 24px;
+  --gf-space-32: 32px;
+  --gf-space-48: 48px;
+
+  /* Radius dan garis */
+  --gf-radius-sm: 8px;
+  --gf-radius-md: 12px;
+  --gf-radius-lg: 16px;
+  --gf-radius-xl: 24px;
+  --gf-radius-full: 999px;
+  --gf-stroke-card: 1px;
+  --gf-stroke-input: 1.5px;
+  --gf-stroke-focus: 2px;
+
+  /* Tipografi: ukuran / tinggi baris / tebal */
+  --gf-text-display-size: 36px;
+  --gf-text-display-line: 44px;
+  --gf-text-display-weight: 700;
+  --gf-text-h1-size: 28px;
+  --gf-text-h1-line: 36px;
+  --gf-text-h1-weight: 700;
+  --gf-text-h2-size: 22px;
+  --gf-text-h2-line: 28px;
+  --gf-text-h2-weight: 700;
+  --gf-text-h3-size: 18px;
+  --gf-text-h3-line: 26px;
+  --gf-text-h3-weight: 600;
+  --gf-text-body-lg-size: 16px;
+  --gf-text-body-lg-line: 24px;
+  --gf-text-body-lg-weight: 400;
+  --gf-text-body-size: 14px;
+  --gf-text-body-line: 20px;
+  --gf-text-body-weight: 400;
+  --gf-text-label-size: 14px;
+  --gf-text-label-line: 20px;
+  --gf-text-label-weight: 600;
+  --gf-text-caption-size: 12px;
+  --gf-text-caption-line: 16px;
+  --gf-text-caption-weight: 500;
+
+  /* Gerak */
+  --gf-motion-fast: 120ms;
+  --gf-motion-medium: 200ms;
+  --gf-motion-slow: 240ms;
+
+  /* Lapisan */
+  --gf-z-sticky: 10;
+  --gf-z-side-panel: 20;
+  --gf-z-sheet: 40;
+  --gf-z-dialog: 60;
+  --gf-z-system-banner: 80;
+  --gf-z-toast: 100;
+}
+
+/* Kurangi animasi: semua transisi 0 ms. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --gf-motion-fast: 0ms;
+    --gf-motion-medium: 0ms;
+    --gf-motion-slow: 0ms;
+  }
+}
+
+/* Angka uang, jumlah, jam, dan nomor pesanan: tabular figures. */
+.gf-num {
+  font-variant-numeric: tabular-nums;
+}

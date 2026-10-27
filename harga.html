@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="pmeta.title">Harga Paket Langganan · GIGFLOW</title>
+  <meta name="description" data-i18n-attr-content="pmeta.description"
+    content="Harga Paket Langganan GIGFLOW per bulan, batas outlet dan Kasir, serta modul yang termasuk di setiap paket.">
+  <link rel="preload" href="fonts/plus-jakarta-sans-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Token desain v2 (--gf-*) dan Plus Jakarta Sans self-host; satu tema terang. -->
+  <link rel="stylesheet" href="gf-tokens.css">
+  <link rel="stylesheet" href="site.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+
+<body>
+  <a class="skip" href="#isi" data-i18n="nav.skip">Langsung ke isi</a>
+
+  <header class="top">
+    <div class="wrap top__bar">
+      <a class="brand" href="index.html" aria-label="GIGFLOW, beranda" data-i18n-attr-aria-label="nav.homeLabel">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <rect class="m-bg" width="32" height="32" rx="8" />
+          <path class="m-fg" d="M16 7a9 9 0 1 0 8.8 10.9H16v-3.6h12.4A12.6 12.6 0 1 1 16 3.4z" transform="translate(1.2 1.6) scale(.92)" />
+        </svg>
+        <span>GIGFLOW</span>
+      </a>
+      <nav class="nav" aria-label="Utama" data-i18n-attr-aria-label="nav.main">
+        <a href="index.html#fitur" data-i18n="nav.features">Fitur</a>
+        <a href="index.html#cara-kerja" data-i18n="nav.how">Cara kerja</a>
+        <a href="harga.html" aria-current="page" data-i18n="nav.pricing">Harga</a>
+      </nav>
+      <div class="top__actions">
+        <a class="lang" href="?lang=en" hreflang="en" lang="en" data-lang-toggle
+          aria-label="Switch to English">EN</a>
+        <a class="btn btn--primary btn--sm" href="daftar.html" data-cta="daftar" data-i18n="cta.try">Coba gratis</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="isi">
+    <section class="section" aria-labelledby="harga-title">
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow" data-i18n="pricing.eyebrow">Harga</p>
+          <h1 class="section__title" id="harga-title" data-i18n="ppage.title">Harga Paket Langganan</h1>
+          <p class="section__lead" data-i18n="ppage.lead">Setiap paket dimulai dengan uji coba gratis 14 hari. Harga per
+            merchant, sudah termasuk semua outlet dan Kasir sesuai batas paket.</p>
+        </div>
+        <div class="plans" id="plans" aria-live="polite" aria-busy="true">
+          <div class="skeleton" aria-hidden="true"></div>
+          <div class="skeleton" aria-hidden="true"></div>
+          <div class="skeleton" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="faq-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 class="section__title" id="faq-title" data-i18n="faq.title">Tanya jawab</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary data-i18n="faq.q1">Bagaimana uji coba gratis berjalan?</summary>
+            <p data-i18n="faq.a1">Setelah mendaftar, merchant Anda langsung aktif selama 14 hari tanpa biaya. Setelah itu
+              langganan berlanjut dengan paket yang Anda pilih.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq.q2">Apa yang terjadi bila pembayaran terlambat?</summary>
+            <p data-i18n="faq.a2">Ada masa tenggang 7 hari. Bila setelah itu belum dibayar, transaksi baru ditahan,
+              tetapi Owner Merchant tetap bisa membaca dan mengekspor semua data.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq.q3">Apakah data saya bisa hilang?</summary>
+            <p data-i18n="faq.a3">Tidak. Data tidak pernah dihapus otomatis, dan data setiap merchant terpisah dari
+              merchant lain.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq.q4">Bisa pindah paket?</summary>
+            <p data-i18n="faq.a4">Bisa. Saat outlet atau Kasir Anda bertambah melewati batas paket, hubungi kami untuk
+              pindah ke paket yang lebih besar.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="akhir-title">
+      <div class="wrap">
+        <div class="cta-band">
+          <div>
+            <h2 id="akhir-title" data-i18n="final.title">Coba GIGFLOW di outlet Anda</h2>
+            <p data-i18n="final.body">Gratis 14 hari. Data tetap milik Anda dan bisa diekspor kapan saja.</p>
+          </div>
+          <a class="btn btn--primary btn--lg" href="daftar.html" data-cta="daftar" data-i18n="cta.signup">Daftar
+            sekarang</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__grid">
+      <div>
+        <p><strong>GIGFLOW</strong></p>
+        <p data-i18n="foot.tagline">Aplikasi kasir, stok, dan laporan untuk usaha F&amp;B.</p>
+        <p><span data-i18n="foot.contact">Kontak:</span> <a href="mailto:estdsuwastio@gmail.com">estdsuwastio@gmail.com</a></p>
+      </div>
+      <nav class="foot__links" aria-label="Tautan kaki halaman" data-i18n-attr-aria-label="foot.nav">
+        <a href="index.html" data-i18n="foot.home">Beranda</a>
+        <a href="privacy.html" data-i18n="foot.privacy">Kebijakan Privasi</a>
+        <a href="terms.html" data-i18n="foot.terms">Ketentuan Layanan</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+
+</html>
