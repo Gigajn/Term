@@ -6,9 +6,9 @@
 // API). Kunci service_role JANGAN PERNAH ditaruh di sini.
 export const SITE_CONFIG = {
   supabaseUrl: 'https://xcctffmmpstdnnooevmc.supabase.co',
-  supabaseAnonKey: 'REPLACE_WITH_YOUR_ANON_KEY',
+  supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhjY3RmZm1tcHN0ZG5ub29ldm1jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc0Nzg2NTQsImV4cCI6MjEwMzA1NDY1NH0.eiOF1u3P7U6I3JzANQbt7ioE43Ph8fe_aSAXWTeNLi0',
   // Alamat aplikasi web GIGFLOW (Vercel), tempat Pendaftaran Mandiri Merchant.
-  appUrl: 'https://kasir-anda.vercel.app',
+  appUrl: 'https://cashierpos-five.vercel.app',
   contactEmail: 'estdsuwastio@gmail.com',
 };
 

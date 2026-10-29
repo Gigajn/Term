@@ -2,6 +2,7 @@
 import { SITE_CONFIG, hasPricingSource } from './config.js';
 import { initLang } from './i18n.js';
 import { fetchPlans, toPlanCards, renderPlanCards } from './pricing.js';
+import { initReveal } from './reveal.js';
 
 const STATUS = {
   id: {
@@ -70,3 +71,5 @@ lang = initLang(document, (next) => {
   else if (box && box.querySelector('.plans__status')) showStatus('unavailable');
 });
 load();
+
+initReveal();

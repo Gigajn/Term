@@ -288,7 +288,7 @@ a:hover { color: var(--gf-primary-pressed); }
 .feature p { margin-top: var(--gf-space-8); color: var(--gf-text-2); font-size: var(--gf-text-body-lg-size); }
 
 /* ── Cara kerja ─────────────────────────────────────────────────────── */
-.steps { display: grid; gap: var(--gf-space-16); counter-reset: step; }
+.steps { display: grid; gap: var(--gf-space-16); counter-reset: step; list-style: none; margin: 0; padding: 0; }
 @media (min-width: 900px) { .steps { grid-template-columns: repeat(3, 1fr); gap: var(--gf-space-24); } }
 .step {
   position: relative;
@@ -429,3 +429,17 @@ a:hover { color: var(--gf-primary-pressed); }
 }
 .foot__links a:hover { color: var(--gf-text); }
 .foot p + p { margin-top: var(--gf-space-4); }
+
+/* ── Gerak: muncul saat terlihat, hover mengangkat (transform + opacity) ── */
+.feature, .step, .plan {
+  transition: transform var(--gf-motion-medium) ease-out, border-color var(--gf-motion-fast) ease-out;
+}
+.feature:hover, .step:hover { transform: translateY(-2px); border-color: var(--gf-primary); }
+.reveal-on .reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity var(--gf-motion-slow) ease-out, transform var(--gf-motion-slow) ease-out;
+  transition-delay: calc(var(--reveal-i, 0) * 60ms);
+}
+.reveal-on .reveal.is-in { opacity: 1; transform: none; }
+.reveal-on .reveal.is-in:hover { transform: translateY(-2px); }
