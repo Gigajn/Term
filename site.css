@@ -1,4 +1,4 @@
-/* Situs pemasaran GIGFLOW (sistem desain v2, D.10; tiket #42).
+/* Situs pemasaran Celvre (sistem desain v2, D.10; tiket #42).
    Semua warna, spasi, radius, tipografi, dan gerak dari gf-tokens.css (--gf-*).
    Jangan menulis warna mentah di sini; tes site/tests/pages.test.mjs menolaknya.
    Mobile-first: 375 px dulu, lalu titik henti 720 px dan 1024 px. */
@@ -111,9 +111,7 @@ a:hover { color: var(--gf-primary-pressed); }
   text-decoration: none;
 }
 .brand:hover { color: var(--gf-text); }
-.brand__mark { width: 32px; height: 32px; }
-.brand__mark .m-bg { fill: var(--gf-brand-logo); }
-.brand__mark .m-fg { fill: var(--gf-on-primary); }
+.brand__mark { width: 32px; height: 32px; border-radius: 8px; }
 
 .nav { display: none; margin-left: auto; gap: var(--gf-space-4); }
 .nav a {
@@ -443,3 +441,8 @@ a:hover { color: var(--gf-primary-pressed); }
 }
 .reveal-on .reveal.is-in { opacity: 1; transform: none; }
 .reveal-on .reveal.is-in:hover { transform: translateY(-2px); }
+
+/* Printer Teruji (tiket 252): tampil hanya bila daftar di celvre-publik.json diisi. */
+.printer-list { margin-top: var(--gf-space-12); padding-left: var(--gf-space-16); color: var(--gf-text); }
+.printer-list li + li { margin-top: var(--gf-space-4); }
+.printer-list__note { list-style: none; margin-left: calc(-1 * var(--gf-space-16)); color: var(--gf-text-2); font-size: var(--gf-text-caption-size); }

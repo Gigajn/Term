@@ -28,6 +28,12 @@ test('kartu mengikuti data: urut sort_order, tanpa Pendiri', () => {
   assert.equal(cards[0].period, '/bulan');
 });
 
+test('Paket Gratis selamanya tidak dijual (ADR-0027)', () => {
+  const free = { code: 'free', name: 'Gratis', modules: ['pos_checkout'], includes_all_modules: false,
+    max_outlets: 1, max_cashiers: 1, price_monthly: '0', price_yearly: '0', sort_order: 5 };
+  assert.deepEqual(toPlanCards([free, ...rows]).map((c) => c.code), ['basic', 'pro']);
+});
+
 test('paket tanpa harga tampil Segera hadir, bukan Rp0', () => {
   const pro = toPlanCards(rows).find((c) => c.code === 'pro');
   assert.equal(pro.price, null);
@@ -93,4 +99,30 @@ test('fetchPlans membaca view publik dengan kunci anon saja', async () => {
 test('fetchPlans melempar galat saat HTTP gagal', async () => {
   const fake = async () => ({ ok: false, status: 401, json: async () => ({}) });
   await assert.rejects(fetchPlans({ supabaseUrl: 'https://x', supabaseAnonKey: 'k' }, fake), /401/);
+});
+
+// Tiket #253 (ADR-0025): setiap kode modul server punya label di situs dan di
+// aplikasi, jadi daftar isi paket di situs sama dengan di aplikasi.
+test('label modul situs dan aplikasi mencakup semua kode modul server', async () => {
+  const { readFileSync, readdirSync } = await import('node:fs');
+  const root = new URL('../../', import.meta.url);
+  const migs = readdirSync(new URL('supabase/migrations/', root))
+    .filter((f) => /^20\d{6}_\d+_.*\.sql$/.test(f)).sort();
+  let codes = null;
+  for (const f of migs) {
+    const sql = readFileSync(new URL(`supabase/migrations/${f}`, root), 'utf8');
+    const m = sql.match(/FUNCTION iam\.subscription_module_codes\(\)[\s\S]*?ARRAY\[([\s\S]*?)\]::text\[\]/);
+    if (m) codes = [...m[1].matchAll(/'([a-z_]+)'/g)].map((x) => x[1]);
+  }
+  assert.ok(codes && codes.includes('whatsapp_assistant') && codes.includes('vouchers'), 'kosakata modul terbaru terbaca');
+  const dart = readFileSync(new URL('lib/features/subscription/presentation/widgets/module_lock.dart', root), 'utf8');
+  const cards = toPlanCards([{ code: 'x', name: 'X', modules: codes, includes_all_modules: false,
+    max_outlets: 1, max_cashiers: 1, price_monthly: 1, sort_order: 1 }], 'id');
+  for (const c of codes) {
+    assert.ok(dart.includes(`'${c}' =>`), `label aplikasi untuk ${c}`);
+  }
+  const shown = JSON.stringify(cards);
+  for (const label of ['Stok opname', 'Pelanggan dan poin', 'Voucher', 'Laporan email', 'Asisten AI', 'Asisten WhatsApp']) {
+    assert.ok(shown.includes(label), `situs menampilkan ${label}`);
+  }
 });

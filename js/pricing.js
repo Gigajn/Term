@@ -15,14 +15,20 @@ const MODULE_LABELS = {
     standard_reports: 'Laporan harian, mingguan, bulanan',
     dynamic_qris: 'QRIS dinamis',
     kds: 'Layar Dapur',
-    multi_warehouse: 'Banyak gudang',
+    multi_warehouse: 'Gudang pusat',
     warehouse_transfer: 'Kirim stok gudang ke outlet',
     bonds: 'Bon pelanggan dan Batas Bon',
-    cogs_reports: 'Laporan HPP',
+    cogs_reports: 'Resep dan HPP',
     self_order: 'Self-Order pelanggan',
     multi_brand: 'Banyak brand',
     white_label: 'Tampilan bermerek sendiri',
     webhooks: 'Webhook integrasi',
+    stock_opname: 'Stok opname',
+    customers_loyalty: 'Pelanggan dan poin',
+    vouchers: 'Voucher',
+    email_reports: 'Laporan email',
+    ai_assistant: 'Asisten AI',
+    whatsapp_assistant: 'Asisten WhatsApp',
   },
   en: {
     pos_checkout: 'Staffed checkout: cash, QRIS, and Bon',
@@ -30,14 +36,20 @@ const MODULE_LABELS = {
     standard_reports: 'Daily, weekly, monthly reports',
     dynamic_qris: 'Dynamic QRIS',
     kds: 'Kitchen display (KDS)',
-    multi_warehouse: 'Multiple warehouses',
+    multi_warehouse: 'Central warehouse',
     warehouse_transfer: 'Warehouse to outlet transfers',
     bonds: 'Customer Bon and credit limits',
-    cogs_reports: 'Cost of goods reports',
+    cogs_reports: 'Recipes and cost of goods',
     self_order: 'Customer Self-Order',
     multi_brand: 'Multiple brands',
     white_label: 'Your own branding',
     webhooks: 'Integration webhooks',
+    stock_opname: 'Stock counts',
+    customers_loyalty: 'Customers and points',
+    vouchers: 'Vouchers',
+    email_reports: 'Email reports',
+    ai_assistant: 'AI assistant',
+    whatsapp_assistant: 'WhatsApp assistant',
   },
 };
 
@@ -86,7 +98,8 @@ export function toPlanCards(rows, lang = 'id') {
   const t = TEXT[lang] || TEXT.id;
   const labels = MODULE_LABELS[lang] || MODULE_LABELS.id;
   const plans = [...(rows || [])]
-    .filter((r) => r && r.code && r.code !== 'founder')
+    // Paket Gratis selamanya tidak dijual (ADR-0027): cukup Masa Coba Gratis 14 hari.
+    .filter((r) => r && r.code && r.code !== 'founder' && r.code !== 'free')
     .sort((a, b) => (a.sort_order ?? 0) - (b.sort_order ?? 0));
   // Sorotan "Paling laris" untuk paket tengah bila ada tiga paket atau lebih.
   const popular = plans.length >= 3 ? plans[Math.floor(plans.length / 2)].code : null;

@@ -1,0 +1,11 @@
+{
+  "_catatan": "Satu sumber konfigurasi publik Celvre, dibaca aplikasi (aset) dan situs. Ubah di sini saja.",
+  "bantuan": {
+    "whatsapp": "",
+    "jamLayanan": "Senin sampai Sabtu, 08.00 sampai 20.00 WIB"
+  },
+  "printerDidukung": "Celvre bekerja dengan printer thermal Bluetooth 58 mm. Sambungkan lewat Bluetooth, lalu pilih di Pengaturan Printer.",
+  "printerTeruji": [],
+  "catatanPrinterLain": "Printer thermal Bluetooth 58 mm lain mungkin bisa dipakai, tetapi tanpa jaminan.",
+  "teksLuring": "Tanpa internet, Celvre tetap bisa menerima tunai; QRIS dan laporan menunggu online"
+}

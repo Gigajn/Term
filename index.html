@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title data-i18n="meta.title">GIGFLOW: kasir, stok, dan laporan untuk usaha F&amp;B</title>
+  <title data-i18n="meta.title">Celvre: kasir, stok, dan laporan untuk usaha F&amp;B</title>
   <meta name="description" data-i18n-attr-content="meta.description"
     content="Aplikasi kasir untuk kedai, kafe, dan usaha F&amp;B: Kasir Outlet dengan tunai, QRIS, dan Bon, stok bahan per outlet dan gudang, serta laporan otomatis ke email.">
   <link rel="preload" href="fonts/plus-jakarta-sans-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
@@ -19,12 +19,9 @@
 
   <header class="top">
     <div class="wrap top__bar">
-      <a class="brand" href="index.html" aria-label="GIGFLOW, beranda" data-i18n-attr-aria-label="nav.homeLabel">
-        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-          <rect class="m-bg" width="32" height="32" rx="8" />
-          <path class="m-fg" d="M16 7a9 9 0 1 0 8.8 10.9H16v-3.6h12.4A12.6 12.6 0 1 1 16 3.4z" transform="translate(1.2 1.6) scale(.92)" />
-        </svg>
-        <span>GIGFLOW</span>
+      <a class="brand" href="index.html" aria-label="Celvre, beranda" data-i18n-attr-aria-label="nav.homeLabel">
+        <img class="brand__mark" src="img/celvre_mark.png" alt="" width="32" height="32">
+        <span>Celvre</span>
       </a>
       <nav class="nav" aria-label="Utama" data-i18n-attr-aria-label="nav.main">
         <a href="#fitur" data-i18n="nav.features">Fitur</a>
@@ -46,7 +43,7 @@
           <p class="eyebrow" data-i18n="hero.eyebrow">Aplikasi kasir untuk usaha F&amp;B</p>
           <h1 class="hero__title" id="hero-title" data-i18n="hero.title">Kasir, stok, dan laporan dalam <em>satu
               aplikasi</em>.</h1>
-          <p class="hero__lead" data-i18n="hero.lead">GIGFLOW membantu kedai, kafe, dan usaha minuman melayani pembeli
+          <p class="hero__lead" data-i18n="hero.lead">Celvre membantu kedai, kafe, dan usaha minuman melayani pembeli
             lebih cepat, menjaga stok bahan tetap akurat, dan mengirim laporan harian ke email Anda tanpa rekap
             manual.</p>
           <div class="hero__ctas">
@@ -212,11 +209,37 @@
       </div>
     </section>
 
+    <section class="section" id="perangkat" aria-labelledby="perangkat-title">
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow" data-i18n="device.eyebrow">Perangkat</p>
+          <h2 class="section__title" id="perangkat-title" data-i18n="device.title">Printer dan koneksi</h2>
+        </div>
+        <ul class="features">
+          <li class="feature">
+            <span class="feature__icon"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M6 2h12v5h2a2 2 0 0 1 2 2v8h-4v5H6v-5H2V9a2 2 0 0 1 2-2h2V2zm2 2v3h8V4H8zm0 11v5h8v-5H8zm-4-6v6h2v-2h12v2h2V9H4z" />
+              </svg></span>
+            <h3 data-i18n="device.printer.title">Printer thermal Bluetooth</h3>
+            <p data-i18n="device.printer.body" data-celvre="printerDidukung">Celvre bekerja dengan printer thermal Bluetooth 58 mm. Sambungkan lewat Bluetooth, lalu pilih di Pengaturan Printer.</p>
+            <ul class="printer-list" data-celvre-printers hidden></ul>
+          </li>
+          <li class="feature">
+            <span class="feature__icon"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M2.3 3.7 3.7 2.3l18 18-1.4 1.4-3.1-3.1A8 8 0 0 1 6 19a5 5 0 0 1-1.5-9.8 8 8 0 0 1 1.3-2.5L2.3 3.7zM7.2 8.1A6 6 0 0 0 6.1 11L6 11.8l-.8.2A3 3 0 0 0 6 17h9.2L7.2 8.1zM12 5a6 6 0 0 1 5.9 5l.1.8.8.2a3 3 0 0 1 1.6 4.7l1.4 1.4A5 5 0 0 0 20 9.2 8 8 0 0 0 9.8 3.3l1.6 1.6c.2 0 .4 0 .6 0z" />
+              </svg></span>
+            <h3 data-i18n="device.offline.title">Saat internet putus</h3>
+            <p data-i18n="device.offline.body" data-celvre="teksLuring">Tanpa internet, Celvre tetap bisa menerima tunai; QRIS dan laporan menunggu online</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="akhir-title">
       <div class="wrap">
         <div class="cta-band">
           <div>
-            <h2 id="akhir-title" data-i18n="final.title">Coba GIGFLOW di outlet Anda</h2>
+            <h2 id="akhir-title" data-i18n="final.title">Coba Celvre di outlet Anda</h2>
             <p data-i18n="final.body">Gratis 14 hari. Data tetap milik Anda dan bisa diekspor kapan saja.</p>
           </div>
           <a class="btn btn--primary btn--lg" href="daftar.html" data-cta="daftar" data-i18n="cta.signup">Daftar
@@ -229,7 +252,7 @@
   <footer class="foot">
     <div class="wrap foot__grid">
       <div>
-        <p><strong>GIGFLOW</strong></p>
+        <p><strong>Celvre</strong></p>
         <p data-i18n="foot.tagline">Aplikasi kasir, stok, dan laporan untuk usaha F&amp;B.</p>
         <p><span data-i18n="foot.contact">Kontak:</span> <a href="mailto:estdsuwastio@gmail.com">estdsuwastio@gmail.com</a></p>
       </div>

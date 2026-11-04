@@ -30,7 +30,7 @@ test('memakai token --gf-* dan font self-host, tanpa font dari CDN', () => {
     assert.match(html, /href="site\.css"/, p);
     assert.doesNotMatch(html, /fonts\.googleapis|fonts\.gstatic|<style/, `${p}: gaya hanya dari site.css`);
   }
-  assert.match(read('gf-tokens.css'), /url\('fonts\/plus-jakarta-sans-latin-wght\.woff2'\)/);
+  assert.match(read('gf-tokens.css'), /url\('fonts\/figtree-latin-wght\.woff2'\)/);
 });
 
 test('site.css tidak memakai warna mentah, hanya token', () => {
@@ -129,4 +129,25 @@ test('istilah mengikuti GLOSSARY', () => {
   }
   const en = Object.values(EN).join(' ');
   for (const re of FORBIDDEN_EN) assert.doesNotMatch(en, re, 'EN');
+});
+
+// Tiket #250: merek lama tidak boleh terlihat di situs (HTML dan teks English).
+test('situs memakai merek Celvre, tanpa GIGFLOW', () => {
+  for (const p of PAGES) assert.doesNotMatch(read(p), /gig\s?flow/i, p);
+  for (const [k, v] of Object.entries(EN)) assert.doesNotMatch(v, /gig\s?flow/i, k);
+  assert.match(read('index.html'), /Celvre/);
+});
+
+// Tiket #252: printer dan batas mode luring dari satu konfigurasi bersama.
+test('situs memakai teks printer dan luring dari celvre-publik.json', async () => {
+  const cfg = JSON.parse(read('celvre-publik.json'));
+  const html = read('index.html');
+  assert.equal(cfg.teksLuring, 'Tanpa internet, Celvre tetap bisa menerima tunai; QRIS dan laporan menunggu online');
+  assert.ok(html.includes(`data-celvre="teksLuring">${cfg.teksLuring}</p>`), 'cadangan teks luring = JSON');
+  assert.ok(html.includes(`data-celvre="printerDidukung">${cfg.printerDidukung}</p>`), 'cadangan printer = JSON');
+  assert.match(html, /data-celvre-printers hidden/);
+  const { printerLines } = await import('../js/public-config.js');
+  assert.deepEqual(printerLines(cfg), cfg.printerTeruji.map((p) => `${p.merek} ${p.tipe} · ${p.koneksi ?? 'Bluetooth'} ${p.lebarMm ?? 58} mm`));
+  assert.deepEqual(printerLines({ printerTeruji: [{ merek: 'Contoh', tipe: 'P58' }, {}] }), ['Contoh P58 · Bluetooth 58 mm']);
+  assert.match(cfg.catatanPrinterLain, /tanpa jaminan/);
 });

@@ -3,6 +3,7 @@ import { SITE_CONFIG, hasPricingSource } from './config.js';
 import { initLang } from './i18n.js';
 import { fetchPlans, toPlanCards, renderPlanCards } from './pricing.js';
 import { initReveal } from './reveal.js';
+import { loadPublicConfig, applyPublicConfig } from './public-config.js';
 
 const STATUS = {
   id: {
@@ -71,5 +72,9 @@ lang = initLang(document, (next) => {
   else if (box && box.querySelector('.plans__status')) showStatus('unavailable');
 });
 load();
+
+loadPublicConfig()
+  .then((cfg) => applyPublicConfig(document, cfg, lang))
+  .catch(() => {}); // cadangan teks di HTML tetap tampil
 
 initReveal();
