@@ -3,13 +3,13 @@
 // kunci data-i18n / data-i18n-attr-<atribut>. Tes site/tests/pages.test.mjs
 // memastikan setiap kunci di HTML punya terjemahan dan tidak ada kunci yatim.
 export const EN = {
-  'meta.title': 'Celvre: point of sale, stock, and reports for F&amp;B businesses',
+  'meta.title': 'Snouvier: point of sale, stock, and reports for F&amp;B businesses',
   'meta.description': 'Point of sale for coffee shops, cafes, and F&B businesses: staffed checkout with cash, QRIS, and Bon, ingredient stock per outlet and warehouse, and automatic email reports.',
-  'pmeta.title': 'Subscription plan pricing · Celvre',
-  'pmeta.description': 'Celvre subscription plan prices per month, outlet and cashier limits, and the modules included in each plan.',
+  'pmeta.title': 'Subscription plan pricing · Snouvier',
+  'pmeta.description': 'Snouvier subscription plan prices per month, outlet and cashier limits, and the modules included in each plan.',
 
   'nav.skip': 'Skip to content',
-  'nav.homeLabel': 'Celvre, home',
+  'nav.homeLabel': 'Snouvier, home',
   'nav.main': 'Main',
   'nav.features': 'Features',
   'nav.how': 'How it works',
@@ -19,7 +19,7 @@ export const EN = {
 
   'hero.eyebrow': 'Point of sale for F&amp;B businesses',
   'hero.title': 'Checkout, stock, and reports in <em>one app</em>.',
-  'hero.lead': 'Celvre helps coffee shops, cafes, and drink stalls serve customers faster, keep ingredient stock accurate, and send daily reports to your email without manual tallying.',
+  'hero.lead': 'Snouvier helps coffee shops, cafes, and drink stalls serve customers faster, keep ingredient stock accurate, and send daily reports to your email without manual tallying.',
   'hero.ctaPrimary': 'Try free for 14 days',
   'hero.ctaSecondary': 'See pricing',
   'hero.note1': 'Android and web',
@@ -81,10 +81,10 @@ export const EN = {
   'device.eyebrow': 'Devices',
   'device.title': 'Printers and connection',
   'device.printer.title': 'Bluetooth thermal printer',
-  'device.printer.body': 'Celvre works with 58 mm Bluetooth thermal printers. Connect over Bluetooth, then choose it in Printer Settings.',
+  'device.printer.body': 'Snouvier works with 58 mm Bluetooth thermal printers. Connect over Bluetooth, then choose it in Printer Settings.',
   'device.offline.title': 'When the internet drops',
-  'device.offline.body': 'Without internet, Celvre can still accept cash; QRIS and reports wait until online',
-  'final.title': 'Try Celvre at your outlet',
+  'device.offline.body': 'Without internet, Snouvier can still accept cash; QRIS and reports wait until online',
+  'final.title': 'Try Snouvier at your outlet',
   'final.body': 'Free for 14 days. Your data stays yours and can be exported at any time.',
 
   'foot.tagline': 'Point of sale, stock, and reports for F&amp;B businesses.',

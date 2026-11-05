@@ -1,11 +1,11 @@
-/* Token desain terpadu Celvre (rombak total: hangat, dua tema).
+/* Token desain terpadu Snouvier (Kaca Salju, dua tema).
    BERKAS HASIL GENERATOR, JANGAN DIEDIT TANGAN. Sumber nilai:
    lib/core/theme/gf_tokens.dart (GfTokens) lewat
    lib/core/theme/gf_tokens_css.dart. Tulis ulang web-kasir/src/gf-tokens.css
    dan site/gf-tokens.css dengan:
      UPDATE_GF_CSS=1 flutter test test/core/theme/gf_css_tokens_test.dart
    Tes yang sama gagal bila isi berkas berbeda dari GfTokens.
-   Dua tema: terang (krem) di :root, gelap (kopi) lewat
+   Dua tema: terang (langit pagi bersalju) di :root, gelap (senja bersalju) lewat
    prefers-color-scheme atau [data-theme="dark"]. Font: Figtree (OFL,
    fonts/OFL.txt), variable WOFF2 subset Latin yang di-host sendiri. */
 
@@ -23,64 +23,79 @@
   --gf-font-sans: 'Figtree', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
   /* Warna netral */
-  --gf-bg: #F6F0E6;
-  --gf-surface: #FFFDF9;
-  --gf-surface-2: #EFE6D8;
-  --gf-border: #E6DACB;
-  --gf-border-input: #8F7C6A;
-  --gf-text: #1F1611;
-  --gf-text-2: #5C4A3E;
-  --gf-text-3: #75614F; /* keterangan; lulus 4,5:1 di bg, surface, surface-2 */
-  --gf-text-disabled: #A8998A; /* hanya teks kontrol mati */
-  --gf-inverse: #2A1F18;
+  --gf-bg: #EEF3F9;
+  --gf-surface: #FAFCFE;
+  --gf-surface-2: #DFEAF5;
+  --gf-border: #D3DEEA;
+  --gf-border-input: #6E8299;
+  --gf-text: #1C2E44;
+  --gf-text-2: #46596E;
+  --gf-text-3: #56697E; /* keterangan; lulus 4,5:1 di bg, surface, surface-2 */
+  --gf-text-disabled: #9AA9BA; /* hanya teks kontrol mati */
+  --gf-inverse: #1C2E44;
   --gf-on-inverse: #FFFFFF;
 
   /* Merek dan aksi */
-  --gf-ink: #1F1611; /* tombol utama (pil) */
+  --gf-ink: #2F5D8A; /* tombol utama (pil) */
   --gf-on-ink: #FFFFFF;
-  --gf-primary: #AD4216;
+  --gf-primary: #2B67A3;
   --gf-on-primary: #FFFFFF;
-  --gf-primary-pressed: #8F3412;
-  --gf-primary-soft: #FBE3D3;
-  --gf-on-primary-soft: #8A3412;
-  --gf-brand-logo: #E8692F; /* logo, grafik, ilustrasi; bukan teks kecil */
-  --gf-highlight: #F0A23A;
-  --gf-on-highlight: #1F1611;
-  --gf-highlight-soft: #FCEBD0;
+  --gf-primary-pressed: #22538A;
+  --gf-primary-soft: #DAE7F5;
+  --gf-on-primary-soft: #1F4F80;
+  --gf-brand-logo: #4A8ACB; /* logo, grafik, ilustrasi; bukan teks kecil */
+  --gf-highlight: #F4BE5C;
+  --gf-on-highlight: #1C2E44;
+  --gf-highlight-soft: #FBEFD6;
   --gf-on-highlight-soft: #7A4700;
 
   /* Status */
-  --gf-success: #1E7A45;
+  --gf-success: #1F7A50;
   --gf-on-success: #FFFFFF;
-  --gf-success-soft: #DDF0E3;
-  --gf-on-success-soft: #165C33;
-  --gf-warning: #9A5A00;
+  --gf-success-soft: #DCF0E7;
+  --gf-on-success-soft: #145C3A;
+  --gf-warning: #8F5A08;
   --gf-on-warning: #FFFFFF;
-  --gf-warning-soft: #FBEBCF;
+  --gf-warning-soft: #FBEBCB;
   --gf-on-warning-soft: #7A4700;
-  --gf-danger: #C23B2E;
+  --gf-danger: #B8403A;
   --gf-on-danger: #FFFFFF;
-  --gf-danger-text: #A8321F; /* teks merah ukuran kecil */
-  --gf-danger-soft: #F8DEDA;
-  --gf-on-danger-soft: #8E2318;
-  --gf-info: #5C4A3E;
-  --gf-info-soft: #EFE6D8;
-  --gf-on-info-soft: #1F1611;
+  --gf-danger-text: #A6352E; /* teks merah ukuran kecil */
+  --gf-danger-soft: #F7E0DE;
+  --gf-on-danger-soft: #8C2A22;
+  --gf-info: #46596E;
+  --gf-info-soft: #DFEAF5;
+  --gf-on-info-soft: #1C2E44;
 
   /* Navigasi */
-  --gf-nav-bg: #1F1611;
-  --gf-nav-text: #F5ECE0;
-  --gf-nav-icon: #B9A794;
-  --gf-nav-active: #F07A3E;
-  --gf-nav-active-bg: #3A2A20;
+  --gf-nav-bg: #F7F9FC;
+  --gf-nav-text: #1C2E44;
+  --gf-nav-icon: #56697E;
+  --gf-nav-active: #2B67A3;
+  --gf-nav-active-bg: #DAE7F5;
 
   /* Ubin menu tanpa foto */
-  --gf-tile-warm: #F8E0C8;
-  --gf-tile-sand: #E9E3CF;
-  --gf-tile-rose: #F3D9CF;
-  --gf-tile-sage: #E2E6D3;
-  --gf-tile-ink: #5A3A22;
-  --gf-focus-ring: #AD4216;
+  --gf-tile-warm: #D3E4F5;
+  --gf-tile-sand: #DCE3EF;
+  --gf-tile-rose: #E2DDF3;
+  --gf-tile-sage: #D5ECEA;
+  --gf-tile-ink: #2A4A6E;
+
+  /* Langit latar, kaca beku, dan kartu sorotan */
+  --gf-sky-top: #EEF3F9;
+  --gf-sky-bottom: #EEF3F9;
+  --gf-sky-glow-ice: #D6E8FA;
+  --gf-sky-glow-aurora: #E4DEF7;
+  --gf-sky-glow-mint: #D5EEEE;
+  --gf-glass: #FFFFFFA8;
+  --gf-glass-nav: #FFFFFF9E;
+  --gf-glass-border: #FFFFFFBF;
+  --gf-hero-start: #2E5A88;
+  --gf-hero-end: #3C6A99;
+  --gf-on-hero: #FFFFFF;
+  --gf-hero-accent: #D6EBFC;
+  --gf-shadow: #1C2E44;
+  --gf-focus-ring: #2B67A3;
 
   /* Spasi (kelipatan 4) */
   --gf-space-4: 4px;
@@ -144,115 +159,141 @@
   --gf-z-toast: 100;
 }
 
-/* Tema gelap (kopi): ikut perangkat, kecuali dipaksa terang. */
+/* Tema gelap (senja bersalju): ikut perangkat, kecuali dipaksa terang. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --gf-bg: #17110D;
-    --gf-surface: #231A14;
-    --gf-surface-2: #2F241C;
-    --gf-border: #3D3027;
-    --gf-border-input: #8A7663;
-    --gf-text: #F5ECE0;
-    --gf-text-2: #CDBBA8;
-    --gf-text-3: #A8957F;
-    --gf-text-disabled: #6E5E50;
-    --gf-inverse: #F5ECE0;
-    --gf-on-inverse: #17110D;
-    --gf-ink: #F5ECE0;
-    --gf-on-ink: #17110D;
-    --gf-primary: #F07A3E;
-    --gf-on-primary: #17110D;
-    --gf-primary-pressed: #F49A6A;
-    --gf-primary-soft: #3E2A1E;
-    --gf-on-primary-soft: #F8B48D;
-    --gf-brand-logo: #F07A3E;
-    --gf-highlight: #F2B451;
-    --gf-on-highlight: #17110D;
-    --gf-highlight-soft: #3A2D17;
-    --gf-on-highlight-soft: #F6CD86;
-    --gf-success: #4CC384;
-    --gf-on-success: #17110D;
-    --gf-success-soft: #1D3326;
-    --gf-on-success-soft: #8FDDB2;
-    --gf-warning: #F2B451;
-    --gf-on-warning: #17110D;
-    --gf-warning-soft: #3A2D17;
-    --gf-on-warning-soft: #F6CD86;
-    --gf-danger: #F07B6E;
-    --gf-on-danger: #17110D;
-    --gf-danger-text: #F58F84;
-    --gf-danger-soft: #3C201B;
-    --gf-on-danger-soft: #F7B0A8;
-    --gf-info: #CDBBA8;
-    --gf-info-soft: #2F241C;
-    --gf-on-info-soft: #F5ECE0;
-    --gf-nav-bg: #E8DCCB;
-    --gf-nav-text: #17110D;
-    --gf-nav-icon: #6B5848;
-    --gf-nav-active: #17110D;
-    --gf-nav-active-bg: #F07A3E;
-    --gf-tile-warm: #3A2A1E;
-    --gf-tile-sand: #33301F;
-    --gf-tile-rose: #3B2622;
-    --gf-tile-sage: #2C3124;
-    --gf-tile-ink: #F3D3B5;
-    --gf-focus-ring: #F07A3E;
+    --gf-bg: #161F2B;
+    --gf-surface: #1F2936;
+    --gf-surface-2: #273242;
+    --gf-border: #2F3B4B;
+    --gf-border-input: #6A7E94;
+    --gf-text: #E2E9F1;
+    --gf-text-2: #AEBCCB;
+    --gf-text-3: #93A3B4;
+    --gf-text-disabled: #5C6B7C;
+    --gf-inverse: #E2E9F1;
+    --gf-on-inverse: #0F1A27;
+    --gf-ink: #6FA2D3;
+    --gf-on-ink: #0F1A27;
+    --gf-primary: #8DBCE6;
+    --gf-on-primary: #0F1A27;
+    --gf-primary-pressed: #A6CCEE;
+    --gf-primary-soft: #233A52;
+    --gf-on-primary-soft: #C3DDF4;
+    --gf-brand-logo: #8DBCE6;
+    --gf-highlight: #E3B867;
+    --gf-on-highlight: #0F1A27;
+    --gf-highlight-soft: #3A3426;
+    --gf-on-highlight-soft: #EBCB8C;
+    --gf-success: #67C595;
+    --gf-on-success: #0F1A27;
+    --gf-success-soft: #1E3A33;
+    --gf-on-success-soft: #93D6B3;
+    --gf-warning: #E3B867;
+    --gf-on-warning: #0F1A27;
+    --gf-warning-soft: #3A3426;
+    --gf-on-warning-soft: #EBCB8C;
+    --gf-danger: #E8857B;
+    --gf-on-danger: #0F1A27;
+    --gf-danger-text: #EF9A90;
+    --gf-danger-soft: #3B2A2F;
+    --gf-on-danger-soft: #F2B8B0;
+    --gf-info: #AEBCCB;
+    --gf-info-soft: #273242;
+    --gf-on-info-soft: #E2E9F1;
+    --gf-nav-bg: #1C2532;
+    --gf-nav-text: #E2E9F1;
+    --gf-nav-icon: #9FAEBF;
+    --gf-nav-active: #CFE4F7;
+    --gf-nav-active-bg: #2A4058;
+    --gf-tile-warm: #23344A;
+    --gf-tile-sand: #263247;
+    --gf-tile-rose: #2D2E48;
+    --gf-tile-sage: #20383F;
+    --gf-tile-ink: #CFE0F0;
+    --gf-sky-top: #1A2433;
+    --gf-sky-bottom: #161F2B;
+    --gf-sky-glow-ice: #6E9BD738;
+    --gf-sky-glow-aurora: #9680D724;
+    --gf-sky-glow-mint: #5AB9C31A;
+    --gf-glass: #FFFFFF0D;
+    --gf-glass-nav: #FFFFFF0A;
+    --gf-glass-border: #FFFFFF17;
+    --gf-hero-start: #2E4560;
+    --gf-hero-end: #2F3550;
+    --gf-on-hero: #E2E9F1;
+    --gf-hero-accent: #B5D6F2;
+    --gf-shadow: #03060B;
+    --gf-focus-ring: #8DBCE6;
   }
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --gf-bg: #17110D;
-  --gf-surface: #231A14;
-  --gf-surface-2: #2F241C;
-  --gf-border: #3D3027;
-  --gf-border-input: #8A7663;
-  --gf-text: #F5ECE0;
-  --gf-text-2: #CDBBA8;
-  --gf-text-3: #A8957F;
-  --gf-text-disabled: #6E5E50;
-  --gf-inverse: #F5ECE0;
-  --gf-on-inverse: #17110D;
-  --gf-ink: #F5ECE0;
-  --gf-on-ink: #17110D;
-  --gf-primary: #F07A3E;
-  --gf-on-primary: #17110D;
-  --gf-primary-pressed: #F49A6A;
-  --gf-primary-soft: #3E2A1E;
-  --gf-on-primary-soft: #F8B48D;
-  --gf-brand-logo: #F07A3E;
-  --gf-highlight: #F2B451;
-  --gf-on-highlight: #17110D;
-  --gf-highlight-soft: #3A2D17;
-  --gf-on-highlight-soft: #F6CD86;
-  --gf-success: #4CC384;
-  --gf-on-success: #17110D;
-  --gf-success-soft: #1D3326;
-  --gf-on-success-soft: #8FDDB2;
-  --gf-warning: #F2B451;
-  --gf-on-warning: #17110D;
-  --gf-warning-soft: #3A2D17;
-  --gf-on-warning-soft: #F6CD86;
-  --gf-danger: #F07B6E;
-  --gf-on-danger: #17110D;
-  --gf-danger-text: #F58F84;
-  --gf-danger-soft: #3C201B;
-  --gf-on-danger-soft: #F7B0A8;
-  --gf-info: #CDBBA8;
-  --gf-info-soft: #2F241C;
-  --gf-on-info-soft: #F5ECE0;
-  --gf-nav-bg: #E8DCCB;
-  --gf-nav-text: #17110D;
-  --gf-nav-icon: #6B5848;
-  --gf-nav-active: #17110D;
-  --gf-nav-active-bg: #F07A3E;
-  --gf-tile-warm: #3A2A1E;
-  --gf-tile-sand: #33301F;
-  --gf-tile-rose: #3B2622;
-  --gf-tile-sage: #2C3124;
-  --gf-tile-ink: #F3D3B5;
-  --gf-focus-ring: #F07A3E;
+  --gf-bg: #161F2B;
+  --gf-surface: #1F2936;
+  --gf-surface-2: #273242;
+  --gf-border: #2F3B4B;
+  --gf-border-input: #6A7E94;
+  --gf-text: #E2E9F1;
+  --gf-text-2: #AEBCCB;
+  --gf-text-3: #93A3B4;
+  --gf-text-disabled: #5C6B7C;
+  --gf-inverse: #E2E9F1;
+  --gf-on-inverse: #0F1A27;
+  --gf-ink: #6FA2D3;
+  --gf-on-ink: #0F1A27;
+  --gf-primary: #8DBCE6;
+  --gf-on-primary: #0F1A27;
+  --gf-primary-pressed: #A6CCEE;
+  --gf-primary-soft: #233A52;
+  --gf-on-primary-soft: #C3DDF4;
+  --gf-brand-logo: #8DBCE6;
+  --gf-highlight: #E3B867;
+  --gf-on-highlight: #0F1A27;
+  --gf-highlight-soft: #3A3426;
+  --gf-on-highlight-soft: #EBCB8C;
+  --gf-success: #67C595;
+  --gf-on-success: #0F1A27;
+  --gf-success-soft: #1E3A33;
+  --gf-on-success-soft: #93D6B3;
+  --gf-warning: #E3B867;
+  --gf-on-warning: #0F1A27;
+  --gf-warning-soft: #3A3426;
+  --gf-on-warning-soft: #EBCB8C;
+  --gf-danger: #E8857B;
+  --gf-on-danger: #0F1A27;
+  --gf-danger-text: #EF9A90;
+  --gf-danger-soft: #3B2A2F;
+  --gf-on-danger-soft: #F2B8B0;
+  --gf-info: #AEBCCB;
+  --gf-info-soft: #273242;
+  --gf-on-info-soft: #E2E9F1;
+  --gf-nav-bg: #1C2532;
+  --gf-nav-text: #E2E9F1;
+  --gf-nav-icon: #9FAEBF;
+  --gf-nav-active: #CFE4F7;
+  --gf-nav-active-bg: #2A4058;
+  --gf-tile-warm: #23344A;
+  --gf-tile-sand: #263247;
+  --gf-tile-rose: #2D2E48;
+  --gf-tile-sage: #20383F;
+  --gf-tile-ink: #CFE0F0;
+  --gf-sky-top: #1A2433;
+  --gf-sky-bottom: #161F2B;
+  --gf-sky-glow-ice: #6E9BD738;
+  --gf-sky-glow-aurora: #9680D724;
+  --gf-sky-glow-mint: #5AB9C31A;
+  --gf-glass: #FFFFFF0D;
+  --gf-glass-nav: #FFFFFF0A;
+  --gf-glass-border: #FFFFFF17;
+  --gf-hero-start: #2E4560;
+  --gf-hero-end: #2F3550;
+  --gf-on-hero: #E2E9F1;
+  --gf-hero-accent: #B5D6F2;
+  --gf-shadow: #03060B;
+  --gf-focus-ring: #8DBCE6;
 }
 
 /* Kurangi animasi: semua transisi 0 ms. */

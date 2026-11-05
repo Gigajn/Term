@@ -10,7 +10,7 @@ import { SITE_CONFIG, signupUrl, hasPricingSource } from '../js/config.js';
 
 const SITE = join(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (f) => readFileSync(join(SITE, f), 'utf8');
-const PAGES = ['index.html', 'harga.html', 'daftar.html', 'privacy.html', 'terms.html'];
+const PAGES = ['index.html', 'harga.html', 'daftar.html', 'privacy.html', 'terms.html', 'hapus-akun.html'];
 const MARKETING = ['index.html', 'harga.html'];
 
 test('semua halaman ada, berbahasa Indonesia, dan responsif', () => {
@@ -50,12 +50,12 @@ test('privasi dan ketentuan tetap bisa diakses dari setiap halaman', () => {
 });
 
 test('email kontak tidak rusak', () => {
-  const email = SITE_CONFIG.contactEmail;
-  assert.match(email, /^[^@\s]+@[^@\s]+\.[a-z]{2,}$/);
+  const allowed = [SITE_CONFIG.contactEmail, SITE_CONFIG.privacyEmail];
+  for (const e of allowed) assert.match(e, /^[^@\s]+@[^@\s]+\.[a-z]{2,}$/);
   for (const p of PAGES) {
     const html = read(p);
     assert.doesNotMatch(html, /@[\w.-]+@/, `${p}: email ganda`);
-    for (const m of html.matchAll(/[\w.+-]+@[\w-]+(\.[\w-]+)+/g)) assert.equal(m[0], email, p);
+    for (const m of html.matchAll(/[\w.+-]+@[\w-]+(\.[\w-]+)+/g)) assert.ok(allowed.includes(m[0]), `${p}: ${m[0]}`);
   }
 });
 
@@ -132,17 +132,17 @@ test('istilah mengikuti GLOSSARY', () => {
 });
 
 // Tiket #250: merek lama tidak boleh terlihat di situs (HTML dan teks English).
-test('situs memakai merek Celvre, tanpa GIGFLOW', () => {
+test('situs memakai merek Snouvier, tanpa GIGFLOW', () => {
   for (const p of PAGES) assert.doesNotMatch(read(p), /gig\s?flow/i, p);
   for (const [k, v] of Object.entries(EN)) assert.doesNotMatch(v, /gig\s?flow/i, k);
-  assert.match(read('index.html'), /Celvre/);
+  assert.match(read('index.html'), /Snouvier/);
 });
 
 // Tiket #252: printer dan batas mode luring dari satu konfigurasi bersama.
 test('situs memakai teks printer dan luring dari celvre-publik.json', async () => {
   const cfg = JSON.parse(read('celvre-publik.json'));
   const html = read('index.html');
-  assert.equal(cfg.teksLuring, 'Tanpa internet, Celvre tetap bisa menerima tunai; QRIS dan laporan menunggu online');
+  assert.equal(cfg.teksLuring, 'Tanpa internet, Snouvier tetap bisa menerima tunai; QRIS dan laporan menunggu online');
   assert.ok(html.includes(`data-celvre="teksLuring">${cfg.teksLuring}</p>`), 'cadangan teks luring = JSON');
   assert.ok(html.includes(`data-celvre="printerDidukung">${cfg.printerDidukung}</p>`), 'cadangan printer = JSON');
   assert.match(html, /data-celvre-printers hidden/);

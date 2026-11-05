@@ -7,9 +7,11 @@
 export const SITE_CONFIG = {
   supabaseUrl: 'https://xcctffmmpstdnnooevmc.supabase.co',
   supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhjY3RmZm1tcHN0ZG5ub29ldm1jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc0Nzg2NTQsImV4cCI6MjEwMzA1NDY1NH0.eiOF1u3P7U6I3JzANQbt7ioE43Ph8fe_aSAXWTeNLi0',
-  // Alamat aplikasi web Celvre (Vercel), tempat Pendaftaran Mandiri Merchant.
-  appUrl: 'https://cashierpos-five.vercel.app',
-  contactEmail: 'estdsuwastio@gmail.com',
+  // Alamat aplikasi web Snouvier (Vercel), tempat Pendaftaran Mandiri Merchant.
+  appUrl: 'https://snouvier.celvre.tech',
+  contactEmail: 'support@celvre.tech',
+  // Permintaan data pribadi dan hapus akun (Kebijakan Privasi, hapus-akun.html).
+  privacyEmail: 'privacy@celvre.tech',
 };
 
 // Parameter yang sama dibaca SignupLink di aplikasi

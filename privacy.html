@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kebijakan Privasi · Celvre</title>
+  <title>Kebijakan Privasi · Snouvier</title>
   <!-- Token desain v2 (--gf-*) dan Plus Jakarta Sans self-host; satu tema terang. -->
   <link rel="stylesheet" href="gf-tokens.css">
   <link rel="stylesheet" href="site.css">
@@ -15,9 +15,9 @@
 
   <header class="top">
     <div class="wrap top__bar">
-      <a class="brand" href="index.html" aria-label="Celvre, beranda">
-        <img class="brand__mark" src="img/celvre_mark.png" alt="" width="32" height="32">
-        <span>Celvre</span>
+      <a class="brand" href="index.html" aria-label="Snouvier, beranda">
+        <img class="brand__mark" src="img/snouvier_mark.png" alt="" width="64" height="32">
+        <span>Snouvier</span>
       </a>
       <nav class="nav" aria-label="Utama">
         <a href="index.html#fitur">Fitur</a>
@@ -34,36 +34,67 @@
   <main id="isi" class="wrap">
     <article class="prose">
       <h1>Kebijakan Privasi</h1>
-      <p class="mut">Celvre · berlaku sejak 27 September 2026</p>
-      <p>Kebijakan ini menjelaskan data apa yang dipakai aplikasi Celvre ("aplikasi"), aplikasi kasir
-          internal milik ESTD Suwastio yang hanya digunakan oleh Owner Merchant dan staf merchant.</p>
-      <h2>Data yang kami kumpulkan</h2>
+      <p class="mut">Snouvier · versi 2026-11-04 · berlaku sejak 4 November 2026</p>
+      <p>Kebijakan ini menjelaskan data pribadi apa yang dikumpulkan Snouvier, untuk apa, dengan siapa dibagikan, dan hak Anda, sesuai Undang-Undang No. 27 Tahun 2022 tentang Pelindungan Data Pribadi.</p>
+      <h2>1. Peran kami</h2>
+      <p>Untuk data akun Owner Merchant dan staf, Snouvier adalah pengendali data. Untuk data Pelanggan yang dicatat Merchant, misalnya nama dan nomor HP pembeli, Merchant adalah pengendali data dan Snouvier memprosesnya atas nama Merchant.</p>
+      <h2>2. Data yang kami kumpulkan</h2>
       <ul>
-          <li><b>Dari akun Google</b> saat Anda memilih "Masuk dengan Google": nama, alamat email, dan foto profil.
-              Kami tidak meminta akses ke Gmail, Drive, kontak, atau data Google lain milik Anda.</li>
-          <li><b>Data kerja</b>: jam login dan logout (dicatat sebagai jam shift), transaksi penjualan, stok, dan
-              pengeluaran outlet yang Anda catat.</li>
+          <li>Data akun: nama, email, nomor HP, nama usaha, alamat outlet, dan kata sandi (disimpan terenkripsi). Bila memakai Masuk dengan Google: nama, email, dan foto profil. Kami tidak mengakses Gmail, Drive, kontak, atau data Google lain.</li>
+          <li>Data operasional: menu, harga, stok, transaksi, shift dan jam kerja, pengeluaran, bon, poin, dan laporan yang dicatat di aplikasi.</li>
+          <li>Data Pelanggan yang dicatat Merchant: nama, nomor HP, riwayat pesanan, bon, dan poin. Bila Asisten WhatsApp aktif: isi pesan Pelanggan ke nomor WhatsApp Merchant.</li>
+          <li>Data pembayaran langganan: status dan riwayat tagihan. Nomor kartu dan data rekening diproses langsung oleh penyedia pembayaran, tidak disimpan oleh kami.</li>
+          <li>Data perangkat dan teknis: jenis perangkat, versi aplikasi, alamat IP, catatan galat, dan token verifikasi keamanan (captcha).</li>
+          <li>Izin perangkat yang dipakai hanya saat fiturnya digunakan: kamera (memindai QR dan memotret nota atau produk), Bluetooth (printer nota), dan akses notifikasi (hanya bila Merchant menyalakan Verifikasi QRIS GoPay, untuk membaca notifikasi pembayaran dari aplikasi GoPay Merchant; notifikasi lain diabaikan).</li>
       </ul>
-      <p>Data tidak dijual, tidak dipakai untuk iklan, dan tidak dibagikan kepada pihak lain di luar penyedia layanan
-          berikut.</p>
-      <h2>Penyimpanan &amp; keamanan</h2>
-      <p>Data disimpan di database yang dilindungi kata sandi dan aturan akses per peran. Karyawan hanya melihat data
-          outletnya sendiri. Data disimpan selama diperlukan untuk pembukuan merchant.</p>
-      <h2>Hak Anda</h2>
-      <p>Anda dapat meminta salinan atau penghapusan data akun Anda dengan menghubungi Owner Merchant di alamat di
-          bawah. Akses Google dapat dicabut kapan saja di <a
-              href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p>
+      <h2>3. Untuk apa data dipakai</h2>
+      <ul>
+          <li>menjalankan layanan: login, pencatatan penjualan, stok, laporan, dan sinkronisasi antar perangkat;</li>
+          <li>mengirim email yang diminta, seperti kode verifikasi, laporan terjadwal, dan pemberitahuan tagihan;</li>
+          <li>keamanan: mencegah penyalahgunaan, Verifikasi Dua Langkah, dan audit perubahan data;</li>
+          <li>dukungan pelanggan dan perbaikan galat;</li>
+          <li>memenuhi kewajiban hukum, misalnya pembukuan tagihan.</li>
+      </ul>
+      <p>Data tidak dijual, tidak dipakai untuk iklan, dan tidak dipakai untuk melatih model kecerdasan buatan.</p>
+      <h2>4. Pihak yang memproses data</h2>
+      <p>Kami memakai penyedia layanan berikut, hanya sebatas yang diperlukan untuk fitur terkait. Sebagian penyedia memproses data di luar Indonesia dengan perlindungan yang setara:</p>
+      <ul>
+          <li>Supabase: database, login, dan penyimpanan berkas;</li>
+          <li>Cloudflare: hosting situs dan aplikasi web, perlindungan jaringan, dan captcha Turnstile;</li>
+          <li>Resend dan Google: pengiriman email; Google juga untuk Masuk dengan Google dan fitur AI pembaca nota (Gemini);</li>
+          <li>Midtrans: pembayaran langganan dan QRIS;</li>
+          <li>Biteship dan jasa kurir: pengiriman pesanan, bila dipakai Merchant;</li>
+          <li>WhatsApp: pesan Asisten WhatsApp, bila dinyalakan Merchant.</li>
+      </ul>
+      <h2>5. Penyimpanan dan keamanan</h2>
+      <p>Data dikirim terenkripsi (HTTPS) dan disimpan di database dengan aturan akses per Merchant dan per peran: staf hanya melihat data outlet tempatnya bekerja, dan Merchant tidak dapat melihat data Merchant lain.</p>
+      <p>Data disimpan selama akun aktif. Setelah permintaan hapus akun, data dihapus dalam 30 hari, kecuali catatan yang wajib disimpan menurut hukum, misalnya bukti tagihan, yang disimpan sampai masa wajibnya berakhir.</p>
+      <h2>6. Hak Anda</h2>
+      <ul>
+          <li>mendapat informasi dan salinan data pribadi Anda;</li>
+          <li>memperbaiki data yang keliru;</li>
+          <li>meminta penghapusan akun dan data (lihat <a href="hapus-akun.html">celvre.tech/hapus-akun.html</a>);</li>
+          <li>menarik persetujuan dan menolak pemrosesan tertentu;</li>
+          <li>mengajukan keluhan kepada otoritas pelindungan data pribadi.</li>
+      </ul>
+      <p>Kirim permintaan ke alamat kontak di bawah. Kami menjawab paling lambat 14 hari. Pelanggan Merchant sebaiknya menghubungi Merchant terkait lebih dulu, karena Merchant yang mengelola datanya. Akses Google dapat dicabut di <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p>
+      <h2>7. Anak</h2>
+      <p>Snouvier ditujukan untuk usaha dan tidak untuk anak di bawah 18 tahun. Kami tidak sengaja mengumpulkan data anak.</p>
+      <h2>8. Kebocoran data</h2>
+      <p>Bila terjadi kegagalan pelindungan data pribadi, kami memberi tahu Pengguna yang terdampak dan otoritas terkait paling lambat 3 x 24 jam sejak diketahui, sesuai UU PDP.</p>
+      <h2>9. Perubahan kebijakan</h2>
+      <p>Kebijakan ini dapat diperbarui. Perubahan penting diberitahukan di aplikasi atau lewat email sebelum berlaku. Versi terbaru selalu ada di halaman ini.</p>
       <h2>Kontak</h2>
-      <p><a href="mailto:estdsuwastio@gmail.com">estdsuwastio@gmail.com</a></p>
-
+      <p><a href="mailto:privacy@celvre.tech">privacy@celvre.tech</a></p>
+      <p>Baca juga <a href="terms.html">Ketentuan Layanan</a> dan <a href="hapus-akun.html">cara menghapus akun</a>.</p>
     </article>
   </main>
 
   <footer class="foot">
     <div class="wrap foot__grid">
       <div>
-        <p><strong>Celvre</strong></p>
-        <p>Kontak: <a href="mailto:estdsuwastio@gmail.com">estdsuwastio@gmail.com</a></p>
+        <p><strong>Snouvier</strong></p>
+        <p>Kontak: <a href="mailto:support@celvre.tech">support@celvre.tech</a></p>
       </div>
       <nav class="foot__links" aria-label="Tautan kaki halaman">
         <a href="index.html">Beranda</a>

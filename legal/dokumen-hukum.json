@@ -1,0 +1,171 @@
+{
+  "_catatan": "Satu sumber Ketentuan Layanan dan Kebijakan Privasi. Dibaca aplikasi (layar persetujuan saat daftar) dan dipakai membuat site/terms.html dan site/privacy.html: node site/tools/build-legal.mjs. Naikkan 'versi' (dan LegalLinks.version) setiap isi berubah.",
+  "versi": "2026-11-04",
+  "berlaku": "4 November 2026",
+  "kontak": "support@celvre.tech",
+  "kontakPrivasi": "privacy@celvre.tech",
+  "dokumen": [
+    {
+      "id": "terms",
+      "judul": "Ketentuan Layanan",
+      "pembuka": "Ketentuan ini mengatur penggunaan Snouvier, layanan kasir, stok, gudang, dan laporan berbasis langganan untuk usaha makanan dan minuman. Dengan membuat akun atau memakai Snouvier, Anda menyetujui Ketentuan ini.",
+      "bagian": [
+        {
+          "judul": "1. Istilah",
+          "poin": [
+            "Snouvier atau kami: pengelola layanan Snouvier, termasuk aplikasi Android, aplikasi web, dan situs celvre.tech.",
+            "Merchant: usaha yang mendaftar dan berlangganan Snouvier, dengan satu atau lebih outlet dan gudang.",
+            "Owner Merchant: orang yang mendaftarkan Merchant dan bertanggung jawab atas akun Merchant tersebut.",
+            "Pengguna: Owner Merchant dan staf yang diberi akses oleh Owner Merchant, misalnya Admin Outlet, Kasir, dan Admin Gudang.",
+            "Pelanggan: pembeli di outlet Merchant, termasuk yang memesan lewat Self-Order atau Asisten WhatsApp."
+          ]
+        },
+        {
+          "judul": "2. Akun",
+          "paragraf": [
+            "Anda wajib berusia minimal 18 tahun dan memberikan data yang benar saat mendaftar. Owner Merchant bertanggung jawab atas semua kegiatan di akun Merchant, termasuk kegiatan staf yang diberinya akses.",
+            "Jaga kerahasiaan kata sandi, PIN, dan kode Verifikasi Dua Langkah. Segera beri tahu kami bila akun dipakai tanpa izin. Owner Merchant dapat mencabut akses staf kapan saja."
+          ]
+        },
+        {
+          "judul": "3. Langganan dan pembayaran",
+          "poin": [
+            "Setiap Merchant baru mendapat Masa Coba Gratis 14 hari dengan batas yang tertera di halaman Harga. Setelah itu Merchant perlu memilih Paket Langganan berbayar untuk terus memakai Snouvier.",
+            "Harga dan batas setiap paket tertera di celvre.tech/harga.html dan di aplikasi. Perubahan harga diberitahukan paling lambat 30 hari sebelum berlaku untuk periode tagihan berikutnya.",
+            "Pembayaran diproses oleh penyedia pembayaran pihak ketiga. Langganan berlaku untuk periode yang dibayar dan tidak diperpanjang otomatis tanpa pembayaran baru.",
+            "Bila tagihan belum dibayar, ada masa tenggang 7 hari. Setelah itu transaksi baru ditahan, tetapi Owner Merchant tetap dapat membaca dan mengekspor semua data.",
+            "Biaya yang sudah dibayar tidak dikembalikan, kecuali bila layanan tidak dapat dipakai karena kesalahan kami atau diwajibkan hukum."
+          ]
+        },
+        {
+          "judul": "4. Penggunaan yang dilarang",
+          "paragraf": ["Anda tidak boleh memakai Snouvier untuk:"],
+          "poin": [
+            "menjual barang atau jasa yang dilarang hukum Indonesia;",
+            "mencatat transaksi palsu, mencuci uang, atau menghindari pajak;",
+            "mengirim pesan spam atau pesan yang tidak diminta lewat Asisten WhatsApp;",
+            "mencoba membobol, menguji beban, atau membongkar sistem Snouvier, atau mengakses data Merchant lain;",
+            "menjual kembali atau menyewakan akses Snouvier tanpa izin tertulis dari kami."
+          ]
+        },
+        {
+          "judul": "5. Data Merchant",
+          "paragraf": [
+            "Data yang Anda catat di Snouvier, seperti menu, stok, transaksi, pelanggan, dan laporan, tetap milik Merchant. Anda memberi kami izin untuk menyimpan dan memproses data itu hanya untuk menjalankan layanan, sesuai Kebijakan Privasi.",
+            "Data setiap Merchant terpisah dari Merchant lain. Owner Merchant dapat mengekspor data kapan saja lewat menu Impor & Ekspor dan Backup. Data tidak dihapus otomatis selama akun ada; penghapusan dilakukan atas permintaan, seperti dijelaskan di halaman Hapus Akun.",
+            "Merchant bertanggung jawab atas data Pelanggan yang dicatatnya, termasuk memberi tahu Pelanggan dan meminta persetujuan bila diwajibkan hukum."
+          ]
+        },
+        {
+          "judul": "6. Layanan pihak ketiga",
+          "paragraf": [
+            "Beberapa fitur memakai layanan pihak ketiga, misalnya QRIS dan payment gateway, WhatsApp, jasa kurir, login Google, dan kecerdasan buatan untuk membaca nota. Penggunaan layanan tersebut juga tunduk pada ketentuan penyedianya. Kami tidak bertanggung jawab atas gangguan, biaya, atau keputusan penyedia pihak ketiga."
+          ]
+        },
+        {
+          "judul": "7. Ketersediaan layanan",
+          "paragraf": [
+            "Kami berusaha menjaga Snouvier selalu dapat dipakai, tetapi tidak menjamin layanan bebas gangguan. Pemeliharaan terjadwal diusahakan di luar jam ramai. Tanpa internet, kasir tetap dapat menerima tunai dan menyinkronkan data setelah kembali online; fitur seperti QRIS dan laporan menunggu koneksi.",
+            "Kami dapat memperbarui, menambah, atau menghentikan fitur. Perubahan yang mengurangi fungsi utama paket berbayar diberitahukan lebih dulu."
+          ]
+        },
+        {
+          "judul": "8. Batas tanggung jawab",
+          "paragraf": [
+            "Snouvier adalah alat bantu pencatatan. Merchant tetap bertanggung jawab atas kebenaran harga, stok, pembukuan, dan kewajiban pajaknya. Sejauh diizinkan hukum, kami tidak bertanggung jawab atas kerugian tidak langsung, kehilangan keuntungan, atau kerugian akibat kesalahan input, perangkat, atau jaringan milik Pengguna. Tanggung jawab kami paling besar sebesar biaya langganan yang Merchant bayar dalam 3 bulan terakhir."
+          ]
+        },
+        {
+          "judul": "9. Penghentian",
+          "paragraf": [
+            "Owner Merchant dapat berhenti berlangganan kapan saja. Kami dapat menangguhkan atau menutup akun yang melanggar Ketentuan ini, setelah memberi tahu lebih dulu kecuali pelanggarannya membahayakan Pengguna lain atau sistem. Setelah penghentian, Owner Merchant tetap dapat meminta ekspor data selama 30 hari."
+          ]
+        },
+        {
+          "judul": "10. Hukum dan perubahan",
+          "paragraf": [
+            "Ketentuan ini tunduk pada hukum Republik Indonesia. Perselisihan diselesaikan lebih dulu secara musyawarah; bila tidak tercapai, melalui pengadilan negeri di wilayah tempat kedudukan pengelola Snouvier.",
+            "Kami dapat memperbarui Ketentuan ini. Perubahan penting diberitahukan di aplikasi atau lewat email, dan Pengguna diminta menyetujui versi baru. Versi terbaru selalu ada di halaman ini."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "privacy",
+      "judul": "Kebijakan Privasi",
+      "pembuka": "Kebijakan ini menjelaskan data pribadi apa yang dikumpulkan Snouvier, untuk apa, dengan siapa dibagikan, dan hak Anda, sesuai Undang-Undang No. 27 Tahun 2022 tentang Pelindungan Data Pribadi.",
+      "bagian": [
+        {
+          "judul": "1. Peran kami",
+          "paragraf": [
+            "Untuk data akun Owner Merchant dan staf, Snouvier adalah pengendali data. Untuk data Pelanggan yang dicatat Merchant, misalnya nama dan nomor HP pembeli, Merchant adalah pengendali data dan Snouvier memprosesnya atas nama Merchant."
+          ]
+        },
+        {
+          "judul": "2. Data yang kami kumpulkan",
+          "poin": [
+            "Data akun: nama, email, nomor HP, nama usaha, alamat outlet, dan kata sandi (disimpan terenkripsi). Bila memakai Masuk dengan Google: nama, email, dan foto profil. Kami tidak mengakses Gmail, Drive, kontak, atau data Google lain.",
+            "Data operasional: menu, harga, stok, transaksi, shift dan jam kerja, pengeluaran, bon, poin, dan laporan yang dicatat di aplikasi.",
+            "Data Pelanggan yang dicatat Merchant: nama, nomor HP, riwayat pesanan, bon, dan poin. Bila Asisten WhatsApp aktif: isi pesan Pelanggan ke nomor WhatsApp Merchant.",
+            "Data pembayaran langganan: status dan riwayat tagihan. Nomor kartu dan data rekening diproses langsung oleh penyedia pembayaran, tidak disimpan oleh kami.",
+            "Data perangkat dan teknis: jenis perangkat, versi aplikasi, alamat IP, catatan galat, dan token verifikasi keamanan (captcha).",
+            "Izin perangkat yang dipakai hanya saat fiturnya digunakan: kamera (memindai QR dan memotret nota atau produk), Bluetooth (printer nota), dan akses notifikasi (hanya bila Merchant menyalakan Verifikasi QRIS GoPay, untuk membaca notifikasi pembayaran dari aplikasi GoPay Merchant; notifikasi lain diabaikan)."
+          ]
+        },
+        {
+          "judul": "3. Untuk apa data dipakai",
+          "poin": [
+            "menjalankan layanan: login, pencatatan penjualan, stok, laporan, dan sinkronisasi antar perangkat;",
+            "mengirim email yang diminta, seperti kode verifikasi, laporan terjadwal, dan pemberitahuan tagihan;",
+            "keamanan: mencegah penyalahgunaan, Verifikasi Dua Langkah, dan audit perubahan data;",
+            "dukungan pelanggan dan perbaikan galat;",
+            "memenuhi kewajiban hukum, misalnya pembukuan tagihan."
+          ],
+          "paragraf": ["Data tidak dijual, tidak dipakai untuk iklan, dan tidak dipakai untuk melatih model kecerdasan buatan."]
+        },
+        {
+          "judul": "4. Pihak yang memproses data",
+          "paragraf": ["Kami memakai penyedia layanan berikut, hanya sebatas yang diperlukan untuk fitur terkait. Sebagian penyedia memproses data di luar Indonesia dengan perlindungan yang setara:"],
+          "poin": [
+            "Supabase: database, login, dan penyimpanan berkas;",
+            "Cloudflare: hosting situs dan aplikasi web, perlindungan jaringan, dan captcha Turnstile;",
+            "Resend dan Google: pengiriman email; Google juga untuk Masuk dengan Google dan fitur AI pembaca nota (Gemini);",
+            "Midtrans: pembayaran langganan dan QRIS;",
+            "Biteship dan jasa kurir: pengiriman pesanan, bila dipakai Merchant;",
+            "WhatsApp: pesan Asisten WhatsApp, bila dinyalakan Merchant."
+          ]
+        },
+        {
+          "judul": "5. Penyimpanan dan keamanan",
+          "paragraf": [
+            "Data dikirim terenkripsi (HTTPS) dan disimpan di database dengan aturan akses per Merchant dan per peran: staf hanya melihat data outlet tempatnya bekerja, dan Merchant tidak dapat melihat data Merchant lain.",
+            "Data disimpan selama akun aktif. Setelah permintaan hapus akun, data dihapus dalam 30 hari, kecuali catatan yang wajib disimpan menurut hukum, misalnya bukti tagihan, yang disimpan sampai masa wajibnya berakhir."
+          ]
+        },
+        {
+          "judul": "6. Hak Anda",
+          "poin": [
+            "mendapat informasi dan salinan data pribadi Anda;",
+            "memperbaiki data yang keliru;",
+            "meminta penghapusan akun dan data (lihat celvre.tech/hapus-akun.html);",
+            "menarik persetujuan dan menolak pemrosesan tertentu;",
+            "mengajukan keluhan kepada otoritas pelindungan data pribadi."
+          ],
+          "paragraf": ["Kirim permintaan ke alamat kontak di bawah. Kami menjawab paling lambat 14 hari. Pelanggan Merchant sebaiknya menghubungi Merchant terkait lebih dulu, karena Merchant yang mengelola datanya. Akses Google dapat dicabut di myaccount.google.com/permissions."]
+        },
+        {
+          "judul": "7. Anak",
+          "paragraf": ["Snouvier ditujukan untuk usaha dan tidak untuk anak di bawah 18 tahun. Kami tidak sengaja mengumpulkan data anak."]
+        },
+        {
+          "judul": "8. Kebocoran data",
+          "paragraf": ["Bila terjadi kegagalan pelindungan data pribadi, kami memberi tahu Pengguna yang terdampak dan otoritas terkait paling lambat 3 x 24 jam sejak diketahui, sesuai UU PDP."]
+        },
+        {
+          "judul": "9. Perubahan kebijakan",
+          "paragraf": ["Kebijakan ini dapat diperbarui. Perubahan penting diberitahukan di aplikasi atau lewat email sebelum berlaku. Versi terbaru selalu ada di halaman ini."]
+        }
+      ]
+    }
+  ]
+}

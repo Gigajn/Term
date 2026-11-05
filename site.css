@@ -1,4 +1,4 @@
-/* Situs pemasaran Celvre (sistem desain v2, D.10; tiket #42).
+/* Situs pemasaran Snouvier (sistem desain v2, D.10; tiket #42).
    Semua warna, spasi, radius, tipografi, dan gerak dari gf-tokens.css (--gf-*).
    Jangan menulis warna mentah di sini; tes site/tests/pages.test.mjs menolaknya.
    Mobile-first: 375 px dulu, lalu titik henti 720 px dan 1024 px. */
@@ -111,7 +111,7 @@ a:hover { color: var(--gf-primary-pressed); }
   text-decoration: none;
 }
 .brand:hover { color: var(--gf-text); }
-.brand__mark { width: 32px; height: 32px; border-radius: 8px; }
+.brand__mark { width: 64px; height: 32px; object-fit: contain; }
 
 .nav { display: none; margin-left: auto; gap: var(--gf-space-4); }
 .nav a {
