@@ -26,10 +26,23 @@ Halaman login aplikasi membuka wizard Pendaftaran Mandiri Merchant satu kali
 (`lib/features/auth/domain/signup_link.dart`).
 
 ## Pasang
-1. Di `js/config.js` isi `supabaseAnonKey` (kunci **anon**, bukan service_role) dan `appUrl`.
-2. Unggah seluruh isi folder `site/` (kecuali `tests/`) ke hosting statis, mis. repo
-   `Gigajn.github.io`.
-3. Google Auth Platform › **Branding**: home page `…/`, privacy `…/privacy.html`,
+Situs terbit di `https://snouvier-web.celvre.tech` dari repo terpisah
+`Gigajn/snouvier-web`, karena satu repo hanya bisa tersambung ke satu proyek
+Cloudflare Pages (repo ini sudah dipakai proyek aplikasi `cashier-pos`).
+
+Folder `site/` tetap di repo ini, karena aplikasi ikut memakainya
+(`celvre-publik.json`, `legal/dokumen-hukum.json`, dan aset halaman hukum).
+Jangan jadikan git terpisah di dalam folder ini.
+
+1. Di `js/config.js` isi `supabaseAnonKey` (kunci publishable atau anon, bukan
+   kunci rahasia) dan `appUrl`.
+2. Kirim isi `site/` ke repo situs: `scripts/terbitkan-situs-web.sh`. Ulangi
+   setiap kali `site/` berubah dan sudah masuk ke `main`.
+3. Cloudflare Pages proyek `snouvier-situs` (sekali): Connect to Git ›
+   `Gigajn/snouvier-web`, branch `main`, build command
+   `rm -rf tests tools README.md`, output directory `/`, custom domain
+   `snouvier-web.celvre.tech`. Header keamanan ada di `_headers`.
+4. Google Auth Platform › **Branding**: home page `…/`, privacy `…/privacy.html`,
    terms `…/terms.html`, lalu **Publish app**.
 
 ## Tes

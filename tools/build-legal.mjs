@@ -11,9 +11,9 @@ const SITE = join(dirname(fileURLToPath(import.meta.url)), '..');
 export const FILES = { terms: 'terms.html', privacy: 'privacy.html' };
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-// "snouvier.celvre.tech/harga.html" → tautan relatif; tautan luar → https.
+// "snouvier-web.celvre.tech/harga.html" → tautan relatif; tautan luar → https.
 const linkify = (s) => esc(s)
-  .replace(/snouvier\.celvre\.tech\/([a-z-]+\.html)/g, '<a href="$1">snouvier.celvre.tech/$1</a>')
+  .replace(/snouvier-web\.celvre\.tech\/([a-z-]+\.html)/g, '<a href="$1">snouvier-web.celvre.tech/$1</a>')
   .replace(/myaccount\.google\.com\/permissions/g,
     '<a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>');
 

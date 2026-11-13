@@ -1,0 +1,17 @@
+# Cloudflare Pages: header untuk situs Snouvier (snouvier-web.celvre.tech).
+# Ada di dalam site/ supaya ikut ke repo situs terpisah (scripts/terbitkan-situs-web.sh).
+# CSP masih Report-Only (P12.4): pelanggaran hanya tercatat di konsol peramban.
+# Setelah 2 minggu tanpa pelanggaran, ganti nama header menjadi
+# Content-Security-Policy.
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=63072000; includeSubDomains
+  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://*.supabase.co; frame-src 'none'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'
+
+/fonts/*
+  Cache-Control: public, max-age=604800
+
+/img/*
+  Cache-Control: public, max-age=604800
