@@ -1,8 +1,7 @@
 /* Token desain terpadu Snouvier (Kaca Salju, dua tema).
    BERKAS HASIL GENERATOR, JANGAN DIEDIT TANGAN. Sumber nilai:
    lib/core/theme/gf_tokens.dart (GfTokens) lewat
-   lib/core/theme/gf_tokens_css.dart. Tulis ulang web-kasir/src/gf-tokens.css
-   dan site/gf-tokens.css dengan:
+   lib/core/theme/gf_tokens_css.dart. Tulis ulang site/gf-tokens.css dengan:
      UPDATE_GF_CSS=1 flutter test test/core/theme/gf_css_tokens_test.dart
    Tes yang sama gagal bila isi berkas berbeda dari GfTokens.
    Dua tema: terang (langit pagi bersalju) di :root, gelap (senja bersalju) lewat
@@ -24,9 +23,9 @@
 
   /* Warna netral */
   --gf-bg: #EEF3F9;
-  --gf-surface: #FAFCFE;
+  --gf-surface: #FFFFFF;
   --gf-surface-2: #DFEAF5;
-  --gf-border: #D3DEEA;
+  --gf-border: #BCCBDD;
   --gf-border-input: #6E8299;
   --gf-text: #1C2E44;
   --gf-text-2: #46596E;
@@ -44,10 +43,10 @@
   --gf-primary-soft: #DAE7F5;
   --gf-on-primary-soft: #1F4F80;
   --gf-brand-logo: #4A8ACB; /* logo, grafik, ilustrasi; bukan teks kecil */
-  --gf-highlight: #F4BE5C;
-  --gf-on-highlight: #1C2E44;
-  --gf-highlight-soft: #FBEFD6;
-  --gf-on-highlight-soft: #7A4700;
+  --gf-highlight: #4FC3E0;
+  --gf-on-highlight: #0F2A44;
+  --gf-highlight-soft: #D8F1F8;
+  --gf-on-highlight-soft: #0B5A73;
 
   /* Status */
   --gf-success: #1F7A50;
@@ -87,9 +86,9 @@
   --gf-sky-glow-ice: #D6E8FA;
   --gf-sky-glow-aurora: #E4DEF7;
   --gf-sky-glow-mint: #D5EEEE;
-  --gf-glass: #FFFFFFA8;
+  --gf-glass: #FFFFFFF2;
   --gf-glass-nav: #FFFFFF9E;
-  --gf-glass-border: #FFFFFFBF;
+  --gf-glass-border: #C6D4E4F2;
   --gf-hero-start: #2E5A88;
   --gf-hero-end: #3C6A99;
   --gf-on-hero: #FFFFFF;
@@ -182,10 +181,10 @@
     --gf-primary-soft: #233A52;
     --gf-on-primary-soft: #C3DDF4;
     --gf-brand-logo: #8DBCE6;
-    --gf-highlight: #E3B867;
+    --gf-highlight: #6FD0EA;
     --gf-on-highlight: #0F1A27;
-    --gf-highlight-soft: #3A3426;
-    --gf-on-highlight-soft: #EBCB8C;
+    --gf-highlight-soft: #1F3A47;
+    --gf-on-highlight-soft: #BDEBF7;
     --gf-success: #67C595;
     --gf-on-success: #0F1A27;
     --gf-success-soft: #1E3A33;
@@ -250,10 +249,10 @@
   --gf-primary-soft: #233A52;
   --gf-on-primary-soft: #C3DDF4;
   --gf-brand-logo: #8DBCE6;
-  --gf-highlight: #E3B867;
+  --gf-highlight: #6FD0EA;
   --gf-on-highlight: #0F1A27;
-  --gf-highlight-soft: #3A3426;
-  --gf-on-highlight-soft: #EBCB8C;
+  --gf-highlight-soft: #1F3A47;
+  --gf-on-highlight-soft: #BDEBF7;
   --gf-success: #67C595;
   --gf-on-success: #0F1A27;
   --gf-success-soft: #1E3A33;

@@ -446,3 +446,16 @@ a:hover { color: var(--gf-primary-pressed); }
 .printer-list { margin-top: var(--gf-space-12); padding-left: var(--gf-space-16); color: var(--gf-text); }
 .printer-list li + li { margin-top: var(--gf-space-4); }
 .printer-list__note { list-style: none; margin-left: calc(-1 * var(--gf-space-16)); color: var(--gf-text-2); font-size: var(--gf-text-caption-size); }
+
+/* Halaman Status (P10.3) */
+.status__ringkasan { margin-top: var(--gf-space-16); padding: var(--gf-space-12) var(--gf-space-16);
+  border-radius: var(--gf-radius-md); font-weight: 600; background: var(--gf-surface-2); color: var(--gf-text); }
+.status__ringkasan[data-tingkat="normal"] { background: var(--gf-success-soft); color: var(--gf-on-success-soft); }
+.status__ringkasan[data-tingkat="sebagian"] { background: var(--gf-warning-soft); color: var(--gf-on-warning-soft); }
+.status__ringkasan[data-tingkat="gangguan"] { background: var(--gf-danger-soft); color: var(--gf-on-danger-soft); }
+.prose ul.status__daftar { list-style: none; padding-left: 0; margin-top: var(--gf-space-16); }
+.status__daftar li { display: flex; justify-content: space-between; gap: var(--gf-space-12);
+  padding: var(--gf-space-12) 0; border-bottom: 1px solid var(--gf-border); }
+.status__nilai { font-weight: 600; color: var(--gf-text-2); }
+.status__nilai[data-tingkat="normal"] { color: var(--gf-on-success-soft); }
+.status__nilai[data-tingkat="gangguan"] { color: var(--gf-danger-text); }

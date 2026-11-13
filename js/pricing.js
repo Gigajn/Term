@@ -6,18 +6,19 @@
 
 export const PLANS_ENDPOINT = '/rest/v1/public_subscription_plans' +
   '?select=code,name,modules,includes_all_modules,max_outlets,max_cashiers,max_warehouses,' +
-  'price_monthly,price_yearly,sort_order&order=sort_order.asc';
+  'price_monthly,price_yearly,sort_order,regular_price_monthly,regular_price_yearly,intro_available' +
+  '&order=sort_order.asc';
 
 const MODULE_LABELS = {
   id: {
-    pos_checkout: 'Kasir Outlet: tunai, QRIS, dan Bon',
+    pos_checkout: 'Kasir Outlet: tunai, QRIS, dan Kasbon',
     catalog: 'Katalog menu dan resep',
     standard_reports: 'Laporan harian, mingguan, bulanan',
     dynamic_qris: 'QRIS dinamis',
     kds: 'Layar Dapur',
     multi_warehouse: 'Gudang pusat',
     warehouse_transfer: 'Kirim stok gudang ke outlet',
-    bonds: 'Bon pelanggan dan Batas Bon',
+    bonds: 'Kasbon pelanggan dan Batas Kasbon',
     cogs_reports: 'Resep dan HPP',
     self_order: 'Self-Order pelanggan',
     multi_brand: 'Banyak brand',
@@ -31,14 +32,14 @@ const MODULE_LABELS = {
     whatsapp_assistant: 'Asisten WhatsApp',
   },
   en: {
-    pos_checkout: 'Staffed checkout: cash, QRIS, and Bon',
+    pos_checkout: 'Staffed checkout: cash, QRIS, and customer credit',
     catalog: 'Menu and recipe catalog',
     standard_reports: 'Daily, weekly, monthly reports',
     dynamic_qris: 'Dynamic QRIS',
     kds: 'Kitchen display (KDS)',
     multi_warehouse: 'Central warehouse',
     warehouse_transfer: 'Warehouse to outlet transfers',
-    bonds: 'Customer Bon and credit limits',
+    bonds: 'Customer credit and credit limits',
     cogs_reports: 'Recipes and cost of goods',
     self_order: 'Customer Self-Order',
     multi_brand: 'Multiple brands',
@@ -59,6 +60,7 @@ const TEXT = {
     perYear: (p) => `atau ${p} per tahun`,
     soon: 'Segera hadir',
     soonNote: 'Harga diumumkan segera.',
+    introNote: (p) => `Harga Perkenalan untuk merchant pertama, terkunci selama berlangganan. Sesudah kuota habis: ${p} per bulan.`,
     outlets: (n) => (n == null ? 'Outlet tanpa batas' : `Sampai ${n} outlet`),
     cashiers: (n) => (n == null ? 'Kasir tanpa batas' : `Sampai ${n} Kasir`),
     warehouses: (n) => (n == null ? 'Gudang tanpa batas' : `Sampai ${n} gudang`),
@@ -71,6 +73,7 @@ const TEXT = {
     perYear: (p) => `or ${p} per year`,
     soon: 'Coming soon',
     soonNote: 'Pricing will be announced soon.',
+    introNote: (p) => `Introductory price for our first merchants, locked while you stay subscribed. After the quota runs out: ${p} per month.`,
     outlets: (n) => (n == null ? 'Unlimited outlets' : `Up to ${n} outlet${n === 1 ? '' : 's'}`),
     cashiers: (n) => (n == null ? 'Unlimited cashiers' : `Up to ${n} cashier${n === 1 ? '' : 's'}`),
     warehouses: (n) => (n == null ? 'Unlimited warehouses' : `Up to ${n} warehouse${n === 1 ? '' : 's'}`),
@@ -104,8 +107,13 @@ export function toPlanCards(rows, lang = 'id') {
   // Sorotan "Paling laris" untuk paket tengah bila ada tiga paket atau lebih.
   const popular = plans.length >= 3 ? plans[Math.floor(plans.length / 2)].code : null;
   return plans.map((r) => {
-    const monthly = priceOf(r.price_monthly);
-    const yearly = priceOf(r.price_yearly);
+    // P8.1: kuota Harga Perkenalan habis → Harga Reguler (migrasi 806).
+    const regularM = priceOf(r.regular_price_monthly);
+    const useRegular = r.intro_available === false && regularM != null;
+    const monthly = useRegular ? regularM : priceOf(r.price_monthly);
+    const yearly = useRegular ? priceOf(r.regular_price_yearly) : priceOf(r.price_yearly);
+    const introNote = r.intro_available === true && regularM != null && monthly != null && regularM > monthly
+      ? t.introNote(formatRupiah(regularM)) : '';
     const features = [t.outlets(r.max_outlets ?? null), t.cashiers(r.max_cashiers ?? null)];
     // Kolom batas gudang belum ada di data lama: jangan menampilkan "tanpa batas" palsu.
     if ('max_warehouses' in r) features.push(t.warehouses(r.max_warehouses ?? null));
@@ -117,7 +125,7 @@ export function toPlanCards(rows, lang = 'id') {
       price: monthly == null ? null : formatRupiah(monthly),
       period: monthly == null ? '' : t.perMonth,
       yearly: monthly != null && yearly != null ? t.perYear(formatRupiah(yearly)) : '',
-      note: monthly == null ? t.soonNote : '',
+      note: monthly == null ? t.soonNote : introNote,
       soon: monthly == null,
       popular: r.code === popular,
       features,
@@ -150,10 +158,18 @@ export function renderPlanCards(cards, { signupHref, lang = 'id' } = {}) {
 </article>`).join('');
 }
 
+/**
+ * Header kunci Data API. Kunci publishable baru (`sb_publishable_…`, P12.1)
+ * hanya boleh di `apikey`; kunci anon lama (JWT) juga dikirim sebagai Bearer.
+ */
+export function keyHeaders(key) {
+  return /^eyJ/.test(key || '') ? { apikey: key, Authorization: `Bearer ${key}` } : { apikey: key };
+}
+
 /** Ambil baris paket dari Data API. Melempar galat bila gagal. */
 export async function fetchPlans(config, fetchImpl = globalThis.fetch) {
   const res = await fetchImpl(config.supabaseUrl.replace(/\/$/, '') + PLANS_ENDPOINT, {
-    headers: { apikey: config.supabaseAnonKey, Authorization: `Bearer ${config.supabaseAnonKey}` },
+    headers: keyHeaders(config.supabaseAnonKey),
   });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const rows = await res.json();

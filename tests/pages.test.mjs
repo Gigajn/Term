@@ -10,7 +10,7 @@ import { SITE_CONFIG, signupUrl, hasPricingSource } from '../js/config.js';
 
 const SITE = join(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (f) => readFileSync(join(SITE, f), 'utf8');
-const PAGES = ['index.html', 'harga.html', 'daftar.html', 'privacy.html', 'terms.html', 'hapus-akun.html'];
+const PAGES = ['index.html', 'harga.html', 'daftar.html', 'privacy.html', 'terms.html', 'hapus-akun.html', 'status.html'];
 const MARKETING = ['index.html', 'harga.html'];
 
 test('semua halaman ada, berbahasa Indonesia, dan responsif', () => {
@@ -118,7 +118,7 @@ test('tanpa emoji sebagai ikon; ikon SVG dekoratif disembunyikan', () => {
 
 // Sama dengan test/core/glossary_terms_test.dart (GLOSSARY.md, baris _Avoid_).
 const FORBIDDEN_ID = [/\bkios\w*/i, /\btenant\w*/i, /\btier\w*/i, /\blisensi\w*/i,
-  /\bsuper[ _-]?admin\b/i, /\bpemilik platform\b/i, /\bhutang\w*/i, /\butang\w*/i, /\bkasbon\w*/i];
+  /\bsuper[ _-]?admin\b/i, /\bpemilik platform\b/i, /\bhutang\w*/i, /\butang\w*/i];
 const FORBIDDEN_EN = [/\bkiosk\w*/i, /\btenant\w*/i, /\btier\w*/i, /\blicen[cs]\w*/i,
   /\bsuper[ _-]?admin\b/i, /\bplatform operator\b/i];
 

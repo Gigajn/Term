@@ -34,7 +34,7 @@
   <main id="isi" class="wrap">
     <article class="prose">
       <h1>Kebijakan Privasi</h1>
-      <p class="mut">Snouvier · versi 2026-11-04 · berlaku sejak 4 November 2026</p>
+      <p class="mut">Snouvier · versi 2026-11-08 · berlaku sejak 8 November 2026</p>
       <p>Kebijakan ini menjelaskan data pribadi apa yang dikumpulkan Snouvier, untuk apa, dengan siapa dibagikan, dan hak Anda, sesuai Undang-Undang No. 27 Tahun 2022 tentang Pelindungan Data Pribadi.</p>
       <h2>1. Peran kami</h2>
       <p>Untuk data akun Owner Merchant dan staf, Snouvier adalah pengendali data. Untuk data Pelanggan yang dicatat Merchant, misalnya nama dan nomor HP pembeli, Merchant adalah pengendali data dan Snouvier memprosesnya atas nama Merchant.</p>
@@ -43,6 +43,7 @@
           <li>Data akun: nama, email, nomor HP, nama usaha, alamat outlet, dan kata sandi (disimpan terenkripsi). Bila memakai Masuk dengan Google: nama, email, dan foto profil. Kami tidak mengakses Gmail, Drive, kontak, atau data Google lain.</li>
           <li>Data operasional: menu, harga, stok, transaksi, shift dan jam kerja, pengeluaran, bon, poin, dan laporan yang dicatat di aplikasi.</li>
           <li>Data Pelanggan yang dicatat Merchant: nama, nomor HP, riwayat pesanan, bon, dan poin. Bila Asisten WhatsApp aktif: isi pesan Pelanggan ke nomor WhatsApp Merchant.</li>
+          <li>Nomor WhatsApp Pelanggan untuk Struk WhatsApp: hanya disimpan bila Pelanggan setuju, dan tercatat siapa yang mencatat persetujuan itu. Tanpa persetujuan, nomor hanya dipakai di HP Kasir untuk membuka WhatsApp dan tidak dikirim ke server.</li>
           <li>Data pembayaran langganan: status dan riwayat tagihan. Nomor kartu dan data rekening diproses langsung oleh penyedia pembayaran, tidak disimpan oleh kami.</li>
           <li>Data perangkat dan teknis: jenis perangkat, versi aplikasi, alamat IP, catatan galat, dan token verifikasi keamanan (captcha).</li>
           <li>Izin perangkat yang dipakai hanya saat fiturnya digunakan: kamera (memindai QR dan memotret nota atau produk), Bluetooth (printer nota), dan akses notifikasi (hanya bila Merchant menyalakan Verifikasi QRIS GoPay, untuk membaca notifikasi pembayaran dari aplikasi GoPay Merchant; notifikasi lain diabaikan).</li>
@@ -53,6 +54,7 @@
           <li>mengirim email yang diminta, seperti kode verifikasi, laporan terjadwal, dan pemberitahuan tagihan;</li>
           <li>keamanan: mencegah penyalahgunaan, Verifikasi Dua Langkah, dan audit perubahan data;</li>
           <li>dukungan pelanggan dan perbaikan galat;</li>
+          <li>tolok ukur antar-kedai secara anonim, hanya untuk Merchant yang menyalakan Izin Data Tolok Ukur;</li>
           <li>memenuhi kewajiban hukum, misalnya pembukuan tagihan.</li>
       </ul>
       <p>Data tidak dijual, tidak dipakai untuk iklan, dan tidak dipakai untuk melatih model kecerdasan buatan.</p>
@@ -60,20 +62,21 @@
       <p>Kami memakai penyedia layanan berikut, hanya sebatas yang diperlukan untuk fitur terkait. Sebagian penyedia memproses data di luar Indonesia dengan perlindungan yang setara:</p>
       <ul>
           <li>Supabase: database, login, dan penyimpanan berkas;</li>
-          <li>Cloudflare: hosting situs dan aplikasi web, perlindungan jaringan, dan captcha Turnstile;</li>
+          <li>Cloudflare: hosting situs dan aplikasi web, perlindungan jaringan, captcha Turnstile, dan penyimpanan cadangan terenkripsi (R2);</li>
           <li>Resend dan Google: pengiriman email; Google juga untuk Masuk dengan Google dan fitur AI pembaca nota (Gemini);</li>
           <li>Midtrans: pembayaran langganan dan QRIS;</li>
           <li>Biteship dan jasa kurir: pengiriman pesanan, bila dipakai Merchant;</li>
           <li>WhatsApp: pesan Asisten WhatsApp, bila dinyalakan Merchant.</li>
       </ul>
       <h2>5. Penyimpanan dan keamanan</h2>
-      <p>Data dikirim terenkripsi (HTTPS) dan disimpan di database dengan aturan akses per Merchant dan per peran: staf hanya melihat data outlet tempatnya bekerja, dan Merchant tidak dapat melihat data Merchant lain.</p>
-      <p>Data disimpan selama akun aktif. Setelah permintaan hapus akun, data dihapus dalam 30 hari, kecuali catatan yang wajib disimpan menurut hukum, misalnya bukti tagihan, yang disimpan sampai masa wajibnya berakhir.</p>
+      <p>Data dikirim terenkripsi (HTTPS) dan disimpan di database dengan aturan akses per Merchant dan per peran: staf hanya melihat data outlet tempatnya bekerja, dan Merchant tidak dapat melihat data Merchant lain. Akun Owner Merchant dan Pemilik Snouvier wajib memakai Verifikasi Dua Langkah.</p>
+      <p>Cadangan dibuat setiap malam, dienkripsi sebelum keluar dari server, disimpan di luar database utama selama 30 hari, dan diuji pemulihannya setiap bulan.</p>
+      <p>Data disimpan selama akun aktif. Data Merchant yang berhenti berlangganan disimpan 12 bulan lalu dihapus. Data Pelanggan yang tidak bertransaksi selama 3 tahun dianonimkan. Setelah permintaan hapus akun, data dihapus dalam 30 hari, kecuali catatan yang wajib disimpan menurut hukum, misalnya bukti tagihan, yang disimpan sampai masa wajibnya berakhir.</p>
       <h2>6. Hak Anda</h2>
       <ul>
           <li>mendapat informasi dan salinan data pribadi Anda;</li>
           <li>memperbaiki data yang keliru;</li>
-          <li>meminta penghapusan akun dan data (lihat <a href="hapus-akun.html">celvre.tech/hapus-akun.html</a>);</li>
+          <li>meminta penghapusan akun dan data (lihat <a href="hapus-akun.html">snouvier.celvre.tech/hapus-akun.html</a>);</li>
           <li>menarik persetujuan dan menolak pemrosesan tertentu;</li>
           <li>mengajukan keluhan kepada otoritas pelindungan data pribadi.</li>
       </ul>
@@ -81,7 +84,7 @@
       <h2>7. Anak</h2>
       <p>Snouvier ditujukan untuk usaha dan tidak untuk anak di bawah 18 tahun. Kami tidak sengaja mengumpulkan data anak.</p>
       <h2>8. Kebocoran data</h2>
-      <p>Bila terjadi kegagalan pelindungan data pribadi, kami memberi tahu Pengguna yang terdampak dan otoritas terkait paling lambat 3 x 24 jam sejak diketahui, sesuai UU PDP.</p>
+      <p>Bila terjadi kegagalan pelindungan data pribadi, kami memberi tahu Pengguna yang terdampak dan otoritas terkait secara tertulis paling lambat 3 x 24 jam sejak diketahui, sesuai UU PDP. Pemberitahuan memuat data yang terdampak, kapan dan bagaimana kejadiannya, serta langkah penanganan dan pemulihan. Untuk data Pelanggan, kami memberi tahu Merchant agar Merchant dapat memberi tahu Pelanggannya.</p>
       <h2>9. Perubahan kebijakan</h2>
       <p>Kebijakan ini dapat diperbarui. Perubahan penting diberitahukan di aplikasi atau lewat email sebelum berlaku. Versi terbaru selalu ada di halaman ini.</p>
       <h2>Kontak</h2>

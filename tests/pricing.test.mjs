@@ -2,7 +2,7 @@
 // Jalankan: node --test site/tests
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import {
+import { keyHeaders,
   formatRupiah, toPlanCards, renderPlanCards, fetchPlans, PLANS_ENDPOINT,
 } from '../js/pricing.js';
 
@@ -96,6 +96,11 @@ test('fetchPlans membaca view publik dengan kunci anon saja', async () => {
   assert.equal(seen.opts.headers.apikey, 'anon-k');
 });
 
+test('kunci publishable hanya di header apikey, kunci anon lama juga Bearer (P12.1)', () => {
+  assert.deepEqual(keyHeaders('sb_publishable_abc'), { apikey: 'sb_publishable_abc' });
+  assert.deepEqual(keyHeaders('eyJhbGc.x.y'), { apikey: 'eyJhbGc.x.y', Authorization: 'Bearer eyJhbGc.x.y' });
+});
+
 test('fetchPlans melempar galat saat HTTP gagal', async () => {
   const fake = async () => ({ ok: false, status: 401, json: async () => ({}) });
   await assert.rejects(fetchPlans({ supabaseUrl: 'https://x', supabaseAnonKey: 'k' }, fake), /401/);
@@ -125,4 +130,20 @@ test('label modul situs dan aplikasi mencakup semua kode modul server', async ()
   for (const label of ['Stok opname', 'Pelanggan dan poin', 'Voucher', 'Laporan email', 'Asisten AI', 'Asisten WhatsApp']) {
     assert.ok(shown.includes(label), `situs menampilkan ${label}`);
   }
+});
+
+// P8.1: Harga Reguler sesudah kuota Harga Perkenalan habis (migrasi 806).
+test('kuota habis: kartu memakai Harga Reguler', async () => {
+  const { toPlanCards } = await import('../js/pricing.js');
+  const row = { code: 'basic', name: 'Basic', modules: [], max_outlets: 1, max_cashiers: 2,
+    price_monthly: '49999.00', price_yearly: '499999.00', regular_price_monthly: '99000.00',
+    regular_price_yearly: '990000.00', sort_order: 10 };
+  const [habis] = toPlanCards([{ ...row, intro_available: false }]);
+  assert.match(habis.price, /99\.000/);
+  assert.equal(habis.note, '');
+  const [ada] = toPlanCards([{ ...row, intro_available: true }]);
+  assert.match(ada.price, /49\.999/);
+  assert.match(ada.note, /Harga Perkenalan.*99\.000/);
+  const [lama] = toPlanCards([{ code: 'basic', name: 'Basic', price_monthly: '49999.00', sort_order: 1 }]);
+  assert.match(lama.price, /49\.999/);
 });

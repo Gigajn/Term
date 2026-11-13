@@ -4,7 +4,7 @@
 // memastikan setiap kunci di HTML punya terjemahan dan tidak ada kunci yatim.
 export const EN = {
   'meta.title': 'Snouvier: point of sale, stock, and reports for F&amp;B businesses',
-  'meta.description': 'Point of sale for coffee shops, cafes, and F&B businesses: staffed checkout with cash, QRIS, and Bon, ingredient stock per outlet and warehouse, and automatic email reports.',
+  'meta.description': 'Point of sale for coffee shops, cafes, and F&B businesses: staffed checkout with cash, QRIS, and customer credit, ingredient stock per outlet and warehouse, and automatic email reports.',
   'pmeta.title': 'Subscription plan pricing · Snouvier',
   'pmeta.description': 'Snouvier subscription plan prices per month, outlet and cashier limits, and the modules included in each plan.',
 
@@ -26,7 +26,7 @@ export const EN = {
   'hero.note2': 'Keeps working when the internet drops',
   'hero.note3': 'Your data is never deleted automatically',
 
-  'preview.label': 'Sample staffed checkout screen: two menu items in the cart and Cash, QRIS, and Bon payment buttons',
+  'preview.label': 'Sample staffed checkout screen: two menu items in the cart and Cash, QRIS, and Credit payment buttons',
   'preview.title': 'Order',
   'preview.meta': 'Main outlet · Cashier 1',
   'preview.item1': 'Jumbo Iced Tea',
@@ -40,15 +40,15 @@ export const EN = {
   'features.title': 'Everything your outlet needs every day',
   'features.lead': 'Designed with drink stalls that serve long queues, so buttons are big, flows are short, and reports are ready to read.',
   'features.f1.title': 'Fast staffed checkout',
-  'features.f1.body': 'Accept cash, QRIS, and customer Bon, then print a receipt or send a digital one. Orders can be held and resumed.',
+  'features.f1.body': 'Accept cash, QRIS, and customer credit, then print a receipt or send a digital one. Orders can be held and resumed.',
   'features.f2.title': 'Accurate ingredient stock',
   'features.f2.body': 'Recipes deduct ingredient stock automatically with every sale. Track stock per outlet and warehouse, ship goods, and run stock counts.',
   'features.f3.title': 'Automatic email reports',
   'features.f3.body': 'Daily, weekly, and monthly reports go to each person by role. No more manual tallying at closing time.',
   'features.f4.title': 'Many outlets, clear roles',
-  'features.f4.body': 'The Merchant Owner sees every outlet. Outlet Admins and Cashiers see only their own outlet, and sensitive actions need approval.',
+  'features.f4.body': 'The Business Owner sees every outlet. Outlet Admins and Cashiers see only their own outlet, and sensitive actions need approval.',
   'features.f5.title': 'Keep selling offline',
-  'features.f5.body': 'Orders are saved on the device when the internet drops and sync on their own once you are back online. Older laptops can use Light Cashier.',
+  'features.f5.body': 'Orders are saved on the device when the internet drops and sync on their own once you are back online.',
   'features.f6.title': 'Catalog from Excel',
   'features.f6.body': 'Start with a clean catalog, then import menus, prices, and recipes from an Excel file in minutes.',
 
@@ -72,11 +72,13 @@ export const EN = {
   'faq.q1': 'How does the free trial work?',
   'faq.a1': 'Once you sign up, your merchant is active for 14 days at no cost. After that the subscription continues on the plan you chose.',
   'faq.q2': 'What happens if a payment is late?',
-  'faq.a2': 'There is a 7-day grace period. If it is still unpaid after that, new transactions are paused, but the Merchant Owner can still read and export all data.',
+  'faq.a2': 'There is a 7-day grace period. If it is still unpaid after that, new transactions are paused, but the Business Owner can still read and export all data.',
   'faq.q3': 'Can I lose my data?',
   'faq.a3': 'No. Data is never deleted automatically, and each merchant’s data is kept separate from other merchants.',
   'faq.q4': 'Can I change plans?',
-  'faq.a4': 'Yes. When your outlets or cashiers grow past the plan limits, contact us to move to a bigger plan.',
+  'faq.a4': 'Yes. The business owner picks another plan in the Subscription menu, and the new plan applies once its invoice is paid.',
+  'faq.q5': 'Pro, or Basic with extra outlets?',
+  'faq.a5': 'Extra outlets add to the outlet quota of Basic or Pro and are billed per outlet per month with your subscription; the price is shown in the Subscription menu. Choose Basic with an extra outlet if you have 2 outlets and only need checkout, the catalog, and reports. Choose Pro if you have 3 or more outlets, need more cashiers, or use the kitchen display, customer credit, and recipes with cost of goods.',
 
   'device.eyebrow': 'Devices',
   'device.title': 'Printers and connection',

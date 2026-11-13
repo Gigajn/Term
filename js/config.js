@@ -2,13 +2,15 @@
 // harga dibaca dari data Paket Langganan (Pusat Komando) lewat view
 // public.public_subscription_plans (migrasi 240).
 //
-// supabaseAnonKey adalah kunci publik "anon" (Supabase › Project Settings ›
-// API). Kunci service_role JANGAN PERNAH ditaruh di sini.
+// supabaseAnonKey adalah kunci publik: kunci publishable `sb_publishable_…`
+// (Supabase › Project Settings › API Keys), atau kunci "anon" lama sampai
+// Supabase menghapusnya akhir 2026 (P12.1). Kunci rahasia (service role,
+// awalan sb-secret) JANGAN PERNAH ditaruh di sini.
 export const SITE_CONFIG = {
   supabaseUrl: 'https://xcctffmmpstdnnooevmc.supabase.co',
   supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhjY3RmZm1tcHN0ZG5ub29ldm1jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc0Nzg2NTQsImV4cCI6MjEwMzA1NDY1NH0.eiOF1u3P7U6I3JzANQbt7ioE43Ph8fe_aSAXWTeNLi0',
-  // Alamat aplikasi web Snouvier (Vercel), tempat Pendaftaran Mandiri Merchant.
-  appUrl: 'https://snouvier.celvre.tech',
+  // Alamat aplikasi web Snouvier (Cloudflare Pages), tempat Pendaftaran Mandiri Merchant.
+  appUrl: 'https://app.snouvier.celvre.tech',
   contactEmail: 'support@celvre.tech',
   // Permintaan data pribadi dan hapus akun (Kebijakan Privasi, hapus-akun.html).
   privacyEmail: 'privacy@celvre.tech',

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Status Layanan · Snouvier</title>
+  <link rel="stylesheet" href="gf-tokens.css">
+  <link rel="stylesheet" href="site.css">
+  <script type="module" src="js/status.js"></script>
+</head>
+
+<body>
+  <a class="skip" href="#isi">Langsung ke isi</a>
+
+  <header class="top">
+    <div class="wrap top__bar">
+      <a class="brand" href="index.html" aria-label="Snouvier, beranda">
+        <img class="brand__mark" src="img/snouvier_mark.png" alt="" width="64" height="32">
+        <span>Snouvier</span>
+      </a>
+      <nav class="nav" aria-label="Utama">
+        <a href="index.html#fitur">Fitur</a>
+        <a href="harga.html">Harga</a>
+        <a href="privacy.html">Kebijakan Privasi</a>
+        <a href="terms.html">Ketentuan Layanan</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="isi" class="wrap">
+    <article class="prose status">
+      <h1>Status layanan</h1>
+      <p id="ringkasan" class="status__ringkasan" role="status" aria-live="polite" data-tingkat="memeriksa">Memeriksa layanan…</p>
+      <p id="diperiksa" class="mut"></p>
+      <ul id="layanan" class="status__daftar">
+        <li data-layanan="app"><span>Aplikasi Snouvier (web dan HP)</span><span class="status__nilai">Memeriksa…</span></li>
+        <li data-layanan="auth"><span>Masuk akun</span><span class="status__nilai">Memeriksa…</span></li>
+        <li data-layanan="data"><span>Data penjualan, stok, dan laporan</span><span class="status__nilai">Memeriksa…</span></li>
+        <li><span>Asisten WhatsApp</span><span class="status__nilai" data-tingkat="info">Tidak termasuk target</span></li>
+      </ul>
+      <p class="mut">Target Ketersediaan Snouvier 99,5% per bulan untuk aplikasi, masuk akun, dan data. Asisten
+        WhatsApp belum termasuk karena masih memakai jalur tidak resmi WhatsApp. Tanpa internet, kasir tetap bisa
+        menerima tunai; penjualan dikirim saat internet kembali.</p>
+      <h2>Riwayat gangguan</h2>
+      <ul id="insiden">
+        <li>Belum ada gangguan tercatat.</li>
+      </ul>
+      <p>Mengalami gangguan yang tidak tampil di sini? Kirim email ke
+        <a href="mailto:support@celvre.tech">support@celvre.tech</a>.</p>
+    </article>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__grid">
+      <div>
+        <p><strong>Snouvier</strong></p>
+        <p>Kontak: <a href="mailto:support@celvre.tech">support@celvre.tech</a></p>
+      </div>
+      <nav class="foot__links" aria-label="Tautan kaki halaman">
+        <a href="index.html">Beranda</a>
+        <a href="privacy.html">Kebijakan Privasi</a>
+        <a href="terms.html">Ketentuan Layanan</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+
+</html>
