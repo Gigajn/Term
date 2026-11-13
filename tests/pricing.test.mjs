@@ -22,7 +22,7 @@ test('format Rupiah tanpa desimal dengan pemisah titik', () => {
 });
 
 test('kartu mengikuti data: urut sort_order, tanpa Pendiri', () => {
-  const cards = toPlanCards(rows);
+  const cards = toPlanCards(rows, 'id');
   assert.deepEqual(cards.map((c) => c.code), ['basic', 'pro']);
   assert.equal(cards[0].price, 'Rp49.999');
   assert.equal(cards[0].period, '/bulan');
@@ -31,35 +31,35 @@ test('kartu mengikuti data: urut sort_order, tanpa Pendiri', () => {
 test('Paket Gratis selamanya tidak dijual (ADR-0027)', () => {
   const free = { code: 'free', name: 'Gratis', modules: ['pos_checkout'], includes_all_modules: false,
     max_outlets: 1, max_cashiers: 1, price_monthly: '0', price_yearly: '0', sort_order: 5 };
-  assert.deepEqual(toPlanCards([free, ...rows]).map((c) => c.code), ['basic', 'pro']);
+  assert.deepEqual(toPlanCards([free, ...rows], 'id').map((c) => c.code), ['basic', 'pro']);
 });
 
 test('paket tanpa harga tampil Segera hadir, bukan Rp0', () => {
-  const pro = toPlanCards(rows).find((c) => c.code === 'pro');
+  const pro = toPlanCards(rows, 'id').find((c) => c.code === 'pro');
   assert.equal(pro.price, null);
   assert.equal(pro.soon, true);
-  assert.match(renderPlanCards([pro], { signupHref: 'daftar.html' }), /Segera hadir/);
+  assert.match(renderPlanCards([pro], { signupHref: 'signup.html', lang: 'id' }), /Segera hadir/);
 });
 
 test('harga berubah di data langsung berubah di kartu', () => {
   const changed = rows.map((r) => (r.code === 'basic' ? { ...r, price_monthly: 59000 } : r));
-  assert.equal(toPlanCards(changed)[0].price, 'Rp59.000');
+  assert.equal(toPlanCards(changed, 'id')[0].price, 'Rp59.000');
 });
 
 test('batas outlet dan Kasir dari data, NULL = tanpa batas', () => {
-  const cards = toPlanCards([{ ...rows[0], max_outlets: null }]);
+  const cards = toPlanCards([{ ...rows[0], max_outlets: null }], 'id');
   assert.ok(cards[0].features.includes('Outlet tanpa batas'));
   assert.ok(cards[0].features.includes('Sampai 10 Kasir'));
 });
 
 test('batas gudang dari data, NULL = tanpa batas, kolom absen = tidak tampil', () => {
-  const [basic, pro] = toPlanCards(rows);
+  const [basic, pro] = toPlanCards(rows, 'id');
   assert.ok(basic.features.includes('Sampai 1 gudang'));
   assert.ok(pro.features.includes('Sampai 2 gudang'));
-  const unlimited = toPlanCards([{ ...rows[0], max_warehouses: null }]);
+  const unlimited = toPlanCards([{ ...rows[0], max_warehouses: null }], 'id');
   assert.ok(unlimited[0].features.includes('Gudang tanpa batas'));
   const { max_warehouses, ...legacy } = rows[0];
-  assert.ok(!toPlanCards([legacy])[0].features.some((f) => /gudang/i.test(f)));
+  assert.ok(!toPlanCards([legacy], 'id')[0].features.some((f) => /gudang/i.test(f)));
   assert.match(PLANS_ENDPOINT, /max_warehouses/);
 });
 
@@ -67,20 +67,20 @@ test('versi Inggris', () => {
   const [basic] = toPlanCards(rows, 'en');
   assert.equal(basic.period, '/month');
   assert.ok(basic.features.includes('Up to 1 outlet'));
-  assert.match(renderPlanCards(toPlanCards(rows, 'en'), { signupHref: 'daftar.html', lang: 'en' }),
+  assert.match(renderPlanCards(toPlanCards(rows, 'en'), { signupHref: 'signup.html', lang: 'en' }),
     /Coming soon/);
 });
 
 test('teks dari data di-escape', () => {
   const html = renderPlanCards(toPlanCards([{ ...rows[1], name: '<img src=x onerror=alert(1)>' }]),
-    { signupHref: 'daftar.html' });
+    { signupHref: 'signup.html', lang: 'id' });
   assert.doesNotMatch(html, /<img/);
   assert.match(html, /&lt;img/);
 });
 
 test('tombol paket mengarah ke alur pendaftaran', () => {
-  const html = renderPlanCards(toPlanCards(rows), { signupHref: 'daftar.html' });
-  assert.equal((html.match(/href="daftar\.html"/g) || []).length, 2);
+  const html = renderPlanCards(toPlanCards(rows, 'id'), { signupHref: 'signup.html', lang: 'id' });
+  assert.equal((html.match(/href="signup\.html"/g) || []).length, 2);
 });
 
 test('fetchPlans membaca view publik dengan kunci anon saja', async () => {
@@ -138,12 +138,12 @@ test('kuota habis: kartu memakai Harga Reguler', async () => {
   const row = { code: 'basic', name: 'Basic', modules: [], max_outlets: 1, max_cashiers: 2,
     price_monthly: '49999.00', price_yearly: '499999.00', regular_price_monthly: '99000.00',
     regular_price_yearly: '990000.00', sort_order: 10 };
-  const [habis] = toPlanCards([{ ...row, intro_available: false }]);
+  const [habis] = toPlanCards([{ ...row, intro_available: false }], 'id');
   assert.match(habis.price, /99\.000/);
   assert.equal(habis.note, '');
-  const [ada] = toPlanCards([{ ...row, intro_available: true }]);
+  const [ada] = toPlanCards([{ ...row, intro_available: true }], 'id');
   assert.match(ada.price, /49\.999/);
   assert.match(ada.note, /Harga Perkenalan.*99\.000/);
-  const [lama] = toPlanCards([{ code: 'basic', name: 'Basic', price_monthly: '49999.00', sort_order: 1 }]);
+  const [lama] = toPlanCards([{ code: 'basic', name: 'Basic', price_monthly: '49999.00', sort_order: 1 }], 'id');
   assert.match(lama.price, /49\.999/);
 });

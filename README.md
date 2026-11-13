@@ -1,8 +1,10 @@
 # Situs pemasaran Snouvier
 
-Situs statis (tanpa build) sistem desain v2, D.10: beranda, harga, daftar,
-privasi, dan ketentuan. Bahasa utama Indonesia; tombol **EN** mengganti ke
-Inggris. Dipakai juga sebagai homepage, privacy policy, dan terms untuk Google
+Situs statis (tanpa build) sistem desain v2, D.10: beranda (`index.html`),
+harga (`pricing.html`), daftar (`signup.html`), hapus akun
+(`delete-account.html`), status, privasi, dan ketentuan. Bahasa bawaan Inggris
+(teks di HTML); tombol **ID** mengganti ke Indonesia (kamus `ID` di
+`js/i18n.js`). Privasi dan ketentuan tetap berbahasa Indonesia. Dipakai juga sebagai homepage, privacy policy, dan terms untuk Google
 OAuth.
 
 ## Berkas
@@ -21,7 +23,7 @@ Harga awal: Basic Rp49.999 per bulan; Pro dan Business tampil "Segera hadir" sam
 harganya diisi.
 
 ## Tombol daftar
-Semua tombol menuju `daftar.html`, yang mengalihkan ke `{appUrl}/?daftar=1`.
+Semua tombol menuju `signup.html`, yang mengalihkan ke `{appUrl}/?daftar=1`.
 Halaman login aplikasi membuka wizard Pendaftaran Mandiri Merchant satu kali
 (`lib/features/auth/domain/signup_link.dart`).
 
@@ -39,9 +41,11 @@ Jangan jadikan git terpisah di dalam folder ini.
 2. Kirim isi `site/` ke repo situs: `scripts/terbitkan-situs-web.sh`. Ulangi
    setiap kali `site/` berubah dan sudah masuk ke `main`.
 3. Cloudflare Pages proyek `snouvier-situs` (sekali): Connect to Git ›
-   `Gigajn/snouvier-web`, branch `main`, build command
-   `rm -rf tests tools README.md`, output directory `/`, custom domain
-   `snouvier-web.celvre.tech`. Header keamanan ada di `_headers`.
+   `Gigajn/snouvier-web`, branch `main`, framework preset
+   None, build command
+   `mkdir -p dist && cp -r *.html *.css *.json _headers _redirects fonts img js legal dist/`,
+   output directory `dist`, custom domain
+   `snouvier-web.celvre.tech`. Header keamanan ada di `_headers`; pengalihan alamat lama (`harga.html`, `daftar.html`, `hapus-akun.html`) ada di `_redirects`.
 4. Google Auth Platform › **Branding**: home page `…/`, privacy `…/privacy.html`,
    terms `…/terms.html`, lalu **Publish app**.
 

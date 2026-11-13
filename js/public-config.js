@@ -1,6 +1,7 @@
 // Konfigurasi publik bersama aplikasi dan situs (celvre-publik.json, #251/#252).
-// Teks Indonesia di HTML adalah cadangan tanpa JavaScript; tes memastikan
-// cadangan itu sama dengan JSON. Saat dimuat, JSON menjadi sumber teksnya.
+// Teks JSON berbahasa Indonesia. HTML memuat teks Inggris (bahasa bawaan);
+// tes memastikan kamus ID sama dengan JSON. Saat dimuat, JSON menjadi sumber
+// teks Indonesia.
 
 export const PUBLIC_CONFIG_URL = 'celvre-publik.json';
 
@@ -21,8 +22,8 @@ export function applyPublicConfig(doc, cfg, lang) {
   for (const el of doc.querySelectorAll('[data-celvre]')) {
     const v = cfg?.[el.dataset.celvre];
     if (typeof v !== 'string' || !v.trim()) continue;
-    el.dataset.i18nId = v; // teks Indonesia yang dipakai i18n saat ganti bahasa
-    if (lang !== 'en') el.textContent = v;
+    el.dataset.i18nIdText = v; // teks Indonesia yang dipakai i18n saat ganti bahasa
+    if (lang === 'id') el.textContent = v;
   }
   const ul = doc.querySelector('[data-celvre-printers]');
   if (!ul) return;

@@ -1,0 +1,7 @@
+# Cloudflare Pages: alamat lama berbahasa Indonesia tetap jalan (301 ke nama baru).
+/harga.html        /pricing         301
+/harga             /pricing         301
+/daftar.html       /signup          301
+/daftar            /signup          301
+/hapus-akun.html   /delete-account  301
+/hapus-akun        /delete-account  301

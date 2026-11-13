@@ -5,12 +5,12 @@
 // jadi tampil dengan keterangan, bukan diperiksa.
 import { SITE_CONFIG } from './config.js';
 
-export const TARGET = '99,5%';
+export const TARGET = '99.5%';
 
 export const LAYANAN = [
-  { id: 'app', nama: 'Aplikasi Snouvier (web dan HP)' },
-  { id: 'auth', nama: 'Masuk akun' },
-  { id: 'data', nama: 'Data penjualan, stok, dan laporan' },
+  { id: 'app', nama: 'Snouvier app (web and mobile)' },
+  { id: 'auth', nama: 'Sign-in' },
+  { id: 'data', nama: 'Sales, inventory and reporting data' },
 ];
 
 /** Periksa satu alamat; true bila terjangkau dalam batas waktu. */
@@ -45,11 +45,11 @@ export async function periksaSemua(config = SITE_CONFIG, fetchImpl = fetch) {
 /** Ringkasan satu kalimat dari hasil pemeriksaan. */
 export function ringkas(hasil) {
   const turun = LAYANAN.filter((l) => hasil[l.id] === false);
-  if (turun.length === 0) return { tingkat: 'normal', teks: 'Semua layanan berjalan normal' };
+  if (turun.length === 0) return { tingkat: 'normal', teks: 'All systems operational' };
   if (turun.length === LAYANAN.length) {
-    return { tingkat: 'gangguan', teks: 'Snouvier sedang tidak bisa dijangkau dari perangkat ini' };
+    return { tingkat: 'gangguan', teks: 'Snouvier cannot be reached from this device right now' };
   }
-  return { tingkat: 'sebagian', teks: `Gangguan sebagian: ${turun.map((l) => l.nama).join(', ')}` };
+  return { tingkat: 'sebagian', teks: `Partial outage: ${turun.map((l) => l.nama).join(', ')}` };
 }
 
 function tulis(el, teks) {
@@ -66,13 +66,13 @@ async function mulai() {
     const baris = daftar.querySelector(`[data-layanan="${l.id}"] .status__nilai`);
     if (baris) {
       baris.dataset.tingkat = hasil[l.id] ? 'normal' : 'gangguan';
-      tulis(baris, hasil[l.id] ? 'Normal' : 'Gangguan');
+      tulis(baris, hasil[l.id] ? 'Operational' : 'Outage');
     }
   }
   const r = ringkas(hasil);
   ringkasan.dataset.tingkat = r.tingkat;
   tulis(ringkasan, r.teks);
-  if (waktu) tulis(waktu, `Diperiksa ${new Date().toLocaleString('id-ID')}`);
+  if (waktu) tulis(waktu, `Last checked ${new Date().toLocaleString('en-GB')}`);
 
   try {
     const res = await fetch('status-insiden.json', { cache: 'no-store' });
@@ -81,7 +81,7 @@ async function mulai() {
     if (box && insiden.length) {
       box.replaceChildren(...insiden.slice(0, 10).map((i) => {
         const li = document.createElement('li');
-        li.textContent = `${i.tanggal}: ${i.judul}${i.selesai ? ' (selesai)' : ''}`;
+        li.textContent = `${i.tanggal}: ${i.judul}${i.selesai ? ' (resolved)' : ''}`;
         return li;
       }));
     }

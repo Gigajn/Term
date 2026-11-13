@@ -31,7 +31,7 @@
           "judul": "3. Langganan dan pembayaran",
           "poin": [
             "Setiap Merchant baru mendapat Masa Coba Gratis 14 hari dengan batas yang tertera di halaman Harga. Setelah itu Merchant perlu memilih Paket Langganan berbayar untuk terus memakai Snouvier.",
-            "Harga dan batas setiap paket tertera di snouvier-web.celvre.tech/harga.html dan di aplikasi. Perubahan harga diberitahukan paling lambat 30 hari sebelum berlaku untuk periode tagihan berikutnya.",
+            "Harga dan batas setiap paket tertera di snouvier-web.celvre.tech/pricing.html dan di aplikasi. Perubahan harga diberitahukan paling lambat 30 hari sebelum berlaku untuk periode tagihan berikutnya.",
             "Pembayaran diproses oleh penyedia pembayaran pihak ketiga. Langganan berlaku untuk periode yang dibayar dan tidak diperpanjang otomatis tanpa pembayaran baru.",
             "Bila tagihan belum dibayar, ada masa tenggang 7 hari. Setelah itu transaksi baru ditahan, tetapi Owner Merchant tetap dapat membaca dan mengekspor semua data.",
             "Biaya yang sudah dibayar tidak dikembalikan, kecuali bila layanan tidak dapat dipakai karena kesalahan kami atau diwajibkan hukum."
@@ -161,7 +161,7 @@
           "poin": [
             "mendapat informasi dan salinan data pribadi Anda;",
             "memperbaiki data yang keliru;",
-            "meminta penghapusan akun dan data (lihat snouvier-web.celvre.tech/hapus-akun.html);",
+            "meminta penghapusan akun dan data (lihat snouvier-web.celvre.tech/delete-account.html);",
             "menarik persetujuan dan menolak pemrosesan tertentu;",
             "mengajukan keluhan kepada otoritas pelindungan data pribadi."
           ],

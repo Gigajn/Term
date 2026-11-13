@@ -16,7 +16,7 @@ test('semua layanan normal', () => {
 test('gangguan sebagian menyebut layanan yang turun', () => {
   const r = ringkas({ app: true, auth: false, data: true });
   assert.equal(r.tingkat, 'sebagian');
-  assert.match(r.teks, /Masuk akun/);
+  assert.match(r.teks, /Sign-in/);
 });
 
 test('semua turun berarti tidak terjangkau dari perangkat ini', () => {
@@ -42,9 +42,9 @@ test('periksaSemua memakai kunci publik dan alamat kesehatan Supabase', async ()
 
 test('Asisten WhatsApp tampil di luar Target Ketersediaan (P10.4)', () => {
   const html = readFileSync(join(SITE, 'status.html'), 'utf8');
-  assert.match(html, /Asisten WhatsApp/);
-  assert.match(html, /Tidak termasuk target/);
-  assert.match(html, /99,5%/);
+  assert.match(html, /WhatsApp assistant/);
+  assert.match(html, /Not covered by target/);
+  assert.match(html, /99\.5%/);
   const insiden = JSON.parse(readFileSync(join(SITE, 'status-insiden.json'), 'utf8'));
   assert.ok(Array.isArray(insiden.insiden));
 });

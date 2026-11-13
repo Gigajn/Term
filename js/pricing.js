@@ -60,7 +60,7 @@ const TEXT = {
     perYear: (p) => `atau ${p} per tahun`,
     soon: 'Segera hadir',
     soonNote: 'Harga diumumkan segera.',
-    introNote: (p) => `Harga Perkenalan untuk merchant pertama, terkunci selama berlangganan. Sesudah kuota habis: ${p} per bulan.`,
+    introNote: (p) => `Harga Perkenalan untuk merchant pertama, berlaku tetap selama Anda berlangganan. Setelah kuota habis: ${p} per bulan.`,
     outlets: (n) => (n == null ? 'Outlet tanpa batas' : `Sampai ${n} outlet`),
     cashiers: (n) => (n == null ? 'Kasir tanpa batas' : `Sampai ${n} Kasir`),
     warehouses: (n) => (n == null ? 'Gudang tanpa batas' : `Sampai ${n} gudang`),
@@ -73,7 +73,7 @@ const TEXT = {
     perYear: (p) => `or ${p} per year`,
     soon: 'Coming soon',
     soonNote: 'Pricing will be announced soon.',
-    introNote: (p) => `Introductory price for our first merchants, locked while you stay subscribed. After the quota runs out: ${p} per month.`,
+    introNote: (p) => `Introductory price for our first merchants, locked in for as long as you stay subscribed. Once all introductory spots are taken: ${p} per month.`,
     outlets: (n) => (n == null ? 'Unlimited outlets' : `Up to ${n} outlet${n === 1 ? '' : 's'}`),
     cashiers: (n) => (n == null ? 'Unlimited cashiers' : `Up to ${n} cashier${n === 1 ? '' : 's'}`),
     warehouses: (n) => (n == null ? 'Unlimited warehouses' : `Up to ${n} warehouse${n === 1 ? '' : 's'}`),
@@ -97,9 +97,9 @@ function priceOf(v) {
 }
 
 /** Baris view → data kartu yang siap ditampilkan. */
-export function toPlanCards(rows, lang = 'id') {
-  const t = TEXT[lang] || TEXT.id;
-  const labels = MODULE_LABELS[lang] || MODULE_LABELS.id;
+export function toPlanCards(rows, lang = 'en') {
+  const t = TEXT[lang] || TEXT.en;
+  const labels = MODULE_LABELS[lang] || MODULE_LABELS.en;
   const plans = [...(rows || [])]
     // Paket Gratis selamanya tidak dijual (ADR-0027): cukup Masa Coba Gratis 14 hari.
     .filter((r) => r && r.code && r.code !== 'founder' && r.code !== 'free')
@@ -143,8 +143,8 @@ const CHECK = '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable=
   '<path d="M9.55 17.65 4.4 12.5l1.4-1.4 3.75 3.75 8.65-8.65 1.4 1.4z"/></svg>';
 
 /** HTML kartu paket. Semua teks di-escape. */
-export function renderPlanCards(cards, { signupHref, lang = 'id' } = {}) {
-  const t = TEXT[lang] || TEXT.id;
+export function renderPlanCards(cards, { signupHref, lang = 'en' } = {}) {
+  const t = TEXT[lang] || TEXT.en;
   return cards.map((c) => `
 <article class="plan${c.popular ? ' plan--popular' : ''}" aria-labelledby="plan-${esc(c.code)}">
   ${c.popular ? `<p class="plan__badge">${esc(t.popular)}</p>` : ''}

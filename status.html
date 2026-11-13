@@ -1,52 +1,52 @@
 <!doctype html>
-<html lang="id">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Status Layanan · Snouvier</title>
+  <title>System Status | Snouvier</title>
   <link rel="stylesheet" href="gf-tokens.css">
   <link rel="stylesheet" href="site.css">
   <script type="module" src="js/status.js"></script>
 </head>
 
 <body>
-  <a class="skip" href="#isi">Langsung ke isi</a>
+  <a class="skip" href="#main">Skip to main content</a>
 
   <header class="top">
     <div class="wrap top__bar">
-      <a class="brand" href="index.html" aria-label="Snouvier, beranda">
+      <a class="brand" href="index.html" aria-label="Snouvier home">
         <img class="brand__mark" src="img/snouvier_mark.png" alt="" width="64" height="32">
         <span>Snouvier</span>
       </a>
-      <nav class="nav" aria-label="Utama">
-        <a href="index.html#fitur">Fitur</a>
-        <a href="harga.html">Harga</a>
-        <a href="privacy.html">Kebijakan Privasi</a>
-        <a href="terms.html">Ketentuan Layanan</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html#features">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
       </nav>
     </div>
   </header>
 
-  <main id="isi" class="wrap">
+  <main id="main" class="wrap">
     <article class="prose status">
-      <h1>Status layanan</h1>
-      <p id="ringkasan" class="status__ringkasan" role="status" aria-live="polite" data-tingkat="memeriksa">Memeriksa layanan…</p>
+      <h1>System Status</h1>
+      <p id="ringkasan" class="status__ringkasan" role="status" aria-live="polite" data-tingkat="memeriksa">Checking services…</p>
       <p id="diperiksa" class="mut"></p>
       <ul id="layanan" class="status__daftar">
-        <li data-layanan="app"><span>Aplikasi Snouvier (web dan HP)</span><span class="status__nilai">Memeriksa…</span></li>
-        <li data-layanan="auth"><span>Masuk akun</span><span class="status__nilai">Memeriksa…</span></li>
-        <li data-layanan="data"><span>Data penjualan, stok, dan laporan</span><span class="status__nilai">Memeriksa…</span></li>
-        <li><span>Asisten WhatsApp</span><span class="status__nilai" data-tingkat="info">Tidak termasuk target</span></li>
+        <li data-layanan="app"><span>Snouvier app (web and mobile)</span><span class="status__nilai">Checking…</span></li>
+        <li data-layanan="auth"><span>Sign-in</span><span class="status__nilai">Checking…</span></li>
+        <li data-layanan="data"><span>Sales, inventory and reporting data</span><span class="status__nilai">Checking…</span></li>
+        <li><span>WhatsApp assistant</span><span class="status__nilai" data-tingkat="info">Not covered by target</span></li>
       </ul>
-      <p class="mut">Target Ketersediaan Snouvier 99,5% per bulan untuk aplikasi, masuk akun, dan data. Asisten
-        WhatsApp belum termasuk karena masih memakai jalur tidak resmi WhatsApp. Tanpa internet, kasir tetap bisa
-        menerima tunai; penjualan dikirim saat internet kembali.</p>
-      <h2>Riwayat gangguan</h2>
+      <p class="mut">Snouvier targets 99.5% monthly availability for the app, sign-in and data. The WhatsApp
+        assistant is not yet covered because it relies on an unofficial WhatsApp channel. Without an internet
+        connection, the checkout continues to accept cash, and sales sync once the connection is restored.</p>
+      <h2>Incident history</h2>
       <ul id="insiden">
-        <li>Belum ada gangguan tercatat.</li>
+        <li>No incidents reported.</li>
       </ul>
-      <p>Mengalami gangguan yang tidak tampil di sini? Kirim email ke
+      <p>Experiencing an issue that is not listed here? Email
         <a href="mailto:support@celvre.tech">support@celvre.tech</a>.</p>
     </article>
   </main>
@@ -55,12 +55,12 @@
     <div class="wrap foot__grid">
       <div>
         <p><strong>Snouvier</strong></p>
-        <p>Kontak: <a href="mailto:support@celvre.tech">support@celvre.tech</a></p>
+        <p>Contact: <a href="mailto:support@celvre.tech">support@celvre.tech</a></p>
       </div>
-      <nav class="foot__links" aria-label="Tautan kaki halaman">
-        <a href="index.html">Beranda</a>
-        <a href="privacy.html">Kebijakan Privasi</a>
-        <a href="terms.html">Ketentuan Layanan</a>
+      <nav class="foot__links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
       </nav>
     </div>
   </footer>

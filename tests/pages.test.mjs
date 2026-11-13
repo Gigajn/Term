@@ -5,18 +5,20 @@ import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { EN } from '../js/i18n.js';
+import { EN, ID } from '../js/i18n.js';
 import { SITE_CONFIG, signupUrl, hasPricingSource } from '../js/config.js';
 
 const SITE = join(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (f) => readFileSync(join(SITE, f), 'utf8');
-const PAGES = ['index.html', 'harga.html', 'daftar.html', 'privacy.html', 'terms.html', 'hapus-akun.html', 'status.html'];
-const MARKETING = ['index.html', 'harga.html'];
+const PAGES = ['index.html', 'pricing.html', 'signup.html', 'privacy.html', 'terms.html', 'delete-account.html', 'status.html'];
+const MARKETING = ['index.html', 'pricing.html'];
+// Dokumen hukum tetap berbahasa Indonesia (sumber: legal/dokumen-hukum.json).
+const LEGAL = ['privacy.html', 'terms.html'];
 
-test('semua halaman ada, berbahasa Indonesia, dan responsif', () => {
+test('semua halaman ada, bawaan Inggris (dokumen hukum Indonesia), dan responsif', () => {
   for (const p of PAGES) {
     const html = read(p);
-    assert.match(html, /<html lang="id">/, p);
+    assert.match(html, LEGAL.includes(p) ? /<html lang="id">/ : /<html lang="en">/, p);
     assert.match(html, /<meta name="viewport" content="width=device-width,\s*initial-scale=1">/, p);
     assert.match(html, /<title[^>]*>[^<]+<\/title>/, p);
     assert.doesNotMatch(html, /user-scalable=no|maximum-scale=1/, `${p}: zoom tidak boleh dimatikan`);
@@ -61,13 +63,12 @@ test('email kontak tidak rusak', () => {
 
 test('tombol daftar mengarah ke alur Pendaftaran Mandiri Merchant', () => {
   for (const p of MARKETING) {
-    const ctas = [...read(p).matchAll(/<a [^>]*data-cta="daftar"[^>]*>/g)].map((m) => m[0]);
+    const ctas = [...read(p).matchAll(/<a [^>]*data-cta="signup"[^>]*>/g)].map((m) => m[0]);
     assert.ok(ctas.length >= 2, `${p}: minimal CTA di hero/nav dan akhir halaman`);
-    for (const a of ctas) assert.match(a, /href="daftar\.html"/, p);
+    for (const a of ctas) assert.match(a, /href="signup\.html"/, p);
   }
-  const daftar = read('daftar.html');
-  assert.match(daftar, /js\/daftar\.js/);
-  assert.match(read('js/daftar.js'), /signupUrl\(/);
+  assert.match(read('signup.html'), /js\/signup\.js/);
+  assert.match(read('js/signup.js'), /signupUrl\(/);
   const url = new URL(signupUrl('https://app.contoh.id'));
   assert.equal(url.origin, 'https://app.contoh.id');
   assert.equal(url.searchParams.get('daftar'), '1');
@@ -79,7 +80,7 @@ test('harga tidak ditulis di situs: satu sumber di data Paket Langganan', () => 
   for (const f of files) {
     assert.doesNotMatch(read(f), /Rp\s?\d|\b49[.,]?999\b/, `${f}: harga harus dari data`);
   }
-  assert.match(read('harga.html'), /id="plans"/);
+  assert.match(read('pricing.html'), /id="plans"/);
   assert.match(read('index.html'), /id="plans"/);
 });
 
@@ -90,13 +91,18 @@ test('konfigurasi tidak memuat kunci service_role', () => {
   assert.equal(hasPricingSource({ supabaseUrl: 'https://x.supabase.co', supabaseAnonKey: 'abc' }), true);
 });
 
-test('setiap teks data-i18n punya terjemahan Inggris, tanpa kunci yatim', () => {
+test('teks HTML = EN, setiap kunci punya terjemahan Indonesia, tanpa kunci yatim', () => {
   const used = new Set();
   for (const p of MARKETING) {
-    for (const m of read(p).matchAll(/data-i18n(?:-attr-[a-z-]+)?="([^"]+)"/g)) used.add(m[1]);
+    const html = read(p);
+    for (const m of html.matchAll(/data-i18n="([^"]+)"[^>]*>([\s\S]*?)<\/(?:title|p|h1|h2|h3|span|a|summary)>/g)) {
+      assert.equal(m[2], EN[m[1]], `${p}: teks ${m[1]} harus sama dengan EN`);
+    }
+    for (const m of html.matchAll(/data-i18n(?:-attr-[a-z-]+)?="([^"]+)"/g)) used.add(m[1]);
   }
-  for (const k of used) assert.ok(EN[k], `kunci tanpa terjemahan: ${k}`);
+  for (const k of used) assert.ok(EN[k] && ID[k], `kunci tanpa teks EN/ID: ${k}`);
   for (const k of Object.keys(EN)) assert.ok(used.has(k), `kunci tidak dipakai: ${k}`);
+  assert.deepEqual(Object.keys(ID).sort(), Object.keys(EN).sort(), 'kunci EN dan ID sama');
   for (const p of MARKETING) assert.match(read(p), /data-lang-toggle/, `${p}: pilihan bahasa`);
 });
 
@@ -127,6 +133,7 @@ test('istilah mengikuti GLOSSARY', () => {
     const text = read(p).replace(/<[^>]+>/g, ' ');
     for (const re of FORBIDDEN_ID) assert.doesNotMatch(text, re, p);
   }
+  for (const re of FORBIDDEN_ID) assert.doesNotMatch(Object.values(ID).join(' '), re, 'ID');
   const en = Object.values(EN).join(' ');
   for (const re of FORBIDDEN_EN) assert.doesNotMatch(en, re, 'EN');
 });
@@ -143,8 +150,9 @@ test('situs memakai teks printer dan luring dari celvre-publik.json', async () =
   const cfg = JSON.parse(read('celvre-publik.json'));
   const html = read('index.html');
   assert.equal(cfg.teksLuring, 'Tanpa internet, Snouvier tetap bisa menerima tunai; QRIS dan laporan menunggu online');
-  assert.ok(html.includes(`data-celvre="teksLuring">${cfg.teksLuring}</p>`), 'cadangan teks luring = JSON');
-  assert.ok(html.includes(`data-celvre="printerDidukung">${cfg.printerDidukung}</p>`), 'cadangan printer = JSON');
+  assert.equal(ID['device.offline.body'], cfg.teksLuring, 'teks luring Indonesia = JSON');
+  assert.equal(ID['device.printer.body'], cfg.printerDidukung, 'teks printer Indonesia = JSON');
+  assert.match(html, /data-i18n="device.offline.body" data-celvre="teksLuring">/);
   assert.match(html, /data-celvre-printers hidden/);
   const { printerLines } = await import('../js/public-config.js');
   assert.deepEqual(printerLines(cfg), cfg.printerTeruji.map((p) => `${p.merek} ${p.tipe} · ${p.koneksi ?? 'Bluetooth'} ${p.lebarMm ?? 58} mm`));

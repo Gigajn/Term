@@ -7,20 +7,20 @@ import { loadPublicConfig, applyPublicConfig } from './public-config.js';
 
 const STATUS = {
   id: {
-    unavailable: 'Harga belum bisa dimuat saat ini. Hubungi kami untuk penawaran, atau coba lagi sebentar.',
+    unavailable: 'Harga belum dapat dimuat saat ini. Silakan coba lagi sebentar atau hubungi kami untuk penawaran.',
     retry: 'Coba lagi',
-    empty: 'Paket sedang disiapkan. Hubungi kami untuk penawaran.',
+    empty: 'Paket sedang kami siapkan. Silakan hubungi kami untuk penawaran.',
   },
   en: {
-    unavailable: 'Pricing could not be loaded right now. Contact us for a quote, or try again shortly.',
+    unavailable: 'We are unable to load pricing at the moment. Please try again shortly or contact us for a quote.',
     retry: 'Try again',
-    empty: 'Plans are being prepared. Contact us for a quote.',
+    empty: 'Our plans are being finalized. Please contact us for a quote.',
   },
 };
 
 const box = document.getElementById('plans');
 let rows = null;
-let lang = 'id';
+let lang = 'en';
 
 function showStatus(kind) {
   const t = STATUS[lang];
@@ -50,7 +50,7 @@ function render() {
   if (!box || !rows) return;
   const cards = toPlanCards(rows, lang);
   if (!cards.length) return showStatus('empty');
-  box.innerHTML = renderPlanCards(cards, { signupHref: 'daftar.html', lang });
+  box.innerHTML = renderPlanCards(cards, { signupHref: 'signup.html', lang });
   box.setAttribute('aria-busy', 'false');
 }
 
@@ -61,7 +61,9 @@ async function load() {
   try {
     rows = await fetchPlans(SITE_CONFIG);
     render();
-  } catch {
+  } catch (e) {
+    // Penyebab tampil di konsol peramban (mis. HTTP 401 kunci, 404 view, 400 kolom).
+    console.warn('[Snouvier] Gagal memuat Paket Langganan:', e?.message ?? e);
     showStatus('unavailable');
   }
 }

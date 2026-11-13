@@ -11,7 +11,7 @@ const SITE = join(dirname(fileURLToPath(import.meta.url)), '..');
 export const FILES = { terms: 'terms.html', privacy: 'privacy.html' };
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-// "snouvier-web.celvre.tech/harga.html" → tautan relatif; tautan luar → https.
+// "snouvier-web.celvre.tech/pricing.html" → tautan relatif; tautan luar → https.
 const linkify = (s) => esc(s)
   .replace(/snouvier-web\.celvre\.tech\/([a-z-]+\.html)/g, '<a href="$1">snouvier-web.celvre.tech/$1</a>')
   .replace(/myaccount\.google\.com\/permissions/g,
@@ -48,7 +48,7 @@ export function renderArticle(legal, id) {
   const kontak = id === 'privacy' ? (legal.kontakPrivasi ?? legal.kontak) : legal.kontak;
   out.push(`      <p><a href="mailto:${kontak}">${kontak}</a></p>`);
   out.push(`      <p>Baca juga <a href="${FILES[other.id]}">${esc(other.judul)}</a> dan ` +
-    '<a href="hapus-akun.html">cara menghapus akun</a>.</p>');
+    '<a href="delete-account.html">cara menghapus akun</a>.</p>');
   out.push('    </article>');
   return out.join('\n');
 }

@@ -12,7 +12,7 @@ export const SITE_CONFIG = {
   // Alamat aplikasi web Snouvier (Cloudflare Pages), tempat Pendaftaran Mandiri Merchant.
   appUrl: 'https://snouvier.celvre.tech',
   contactEmail: 'support@celvre.tech',
-  // Permintaan data pribadi dan hapus akun (Kebijakan Privasi, hapus-akun.html).
+  // Permintaan data pribadi dan hapus akun (Kebijakan Privasi, delete-account.html).
   privacyEmail: 'privacy@celvre.tech',
 };
 
