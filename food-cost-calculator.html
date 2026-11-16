@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="cmeta.title">Free Food Cost Calculator | Snouvier</title>
+  <meta name="description" data-i18n-attr-content="cmeta.description"
+    content="Calculate the cost per serving of any recipe, its food cost percentage and a suggested selling price for your target margin. Free, no sign-up required.">
+  <link rel="preload" href="fonts/figtree-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Token desain v2 (--gf-*) dan Figtree self-host; satu tema terang. -->
+  <link rel="stylesheet" href="gf-tokens.css">
+  <link rel="stylesheet" href="site.css">
+  <script type="module" src="js/food-cost-page.js"></script>
+</head>
+
+<body>
+  <a class="skip" href="#main" data-i18n="nav.skip">Skip to main content</a>
+
+  <header class="top">
+    <div class="wrap top__bar">
+      <a class="brand" href="index.html" aria-label="Snouvier home" data-i18n-attr-aria-label="nav.homeLabel">
+        <img class="brand__mark" src="img/snouvier_mark.png" alt="" width="64" height="32">
+        <span>Snouvier</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation" data-i18n-attr-aria-label="nav.main">
+        <a href="index.html#features" data-i18n="nav.features">Features</a>
+        <a href="index.html#how-it-works" data-i18n="nav.how">How It Works</a>
+        <a href="pricing.html" data-i18n="nav.pricing">Pricing</a>
+      </nav>
+      <div class="top__actions">
+        <a class="lang" href="?lang=id" hreflang="id" lang="id" data-lang-toggle
+          aria-label="Ganti ke Bahasa Indonesia">ID</a>
+        <a class="btn btn--primary btn--sm" href="signup.html" data-cta="signup" data-i18n="cta.try">Start Free Trial</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section calc" aria-labelledby="calc-heading">
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow" data-i18n="calc.eyebrow">Free tool</p>
+          <h1 class="section__title" id="calc-heading" data-i18n="calc.title">Food Cost Calculator</h1>
+          <p class="section__lead" data-i18n="calc.lead">Enter each ingredient with its purchase price, package size and amount per serving. You will see the cost per serving, the food cost percentage and a suggested selling price. Nothing is sent to our servers.</p>
+        </div>
+
+        <noscript><p class="calc__note" data-i18n="calc.noscript">This calculator needs JavaScript enabled in your browser.</p></noscript>
+
+        <div id="calc-app" class="calc__grid" hidden>
+          <form class="calc__form" autocomplete="off">
+            <h2 class="calc__print-title" id="print-title" aria-hidden="true"></h2>
+            <div class="calc__meta">
+              <label class="calc__field">
+                <span data-i18n="calc.recipe">Recipe name</span>
+                <input type="text" id="calc-title" maxlength="80">
+              </label>
+              <label class="calc__field">
+                <span data-i18n="calc.currency">Currency</span>
+                <select id="calc-currency"></select>
+              </label>
+            </div>
+
+            <h2 class="calc__sub" data-i18n="calc.ingredients">Ingredients</h2>
+            <ol class="calc__rows" id="calc-rows"></ol>
+            <button type="button" class="btn btn--secondary calc__add" id="calc-add" data-i18n="calc.add">Add ingredient</button>
+
+            <h2 class="calc__sub" data-i18n="calc.pricing">Pricing</h2>
+            <div class="calc__meta">
+              <label class="calc__field">
+                <span data-i18n="calc.margin">Target gross margin (%)</span>
+                <input type="text" id="calc-margin" inputmode="decimal">
+              </label>
+              <label class="calc__field">
+                <span data-i18n="calc.price">Current selling price (optional)</span>
+                <input type="text" id="calc-price" inputmode="decimal">
+              </label>
+            </div>
+          </form>
+
+          <aside class="calc__result" aria-labelledby="calc-result-title">
+            <h2 class="calc__sub" id="calc-result-title" data-i18n="calc.result">Result per serving</h2>
+            <dl aria-live="polite">
+              <div class="calc__stat calc__stat--main">
+                <dt data-i18n="calc.cost">Cost per serving</dt>
+                <dd id="res-cost">–</dd>
+              </div>
+              <div class="calc__stat calc__stat--main">
+                <dt data-i18n="calc.suggested">Suggested selling price</dt>
+                <dd id="res-suggested">–</dd>
+              </div>
+              <div class="calc__stat">
+                <dt data-i18n="calc.suggestedPct">Food cost at suggested price</dt>
+                <dd id="res-suggested-pct">–</dd>
+              </div>
+              <div class="calc__stat">
+                <dt data-i18n="calc.pct">Food cost at current price</dt>
+                <dd id="res-pct">–</dd>
+              </div>
+              <div class="calc__stat">
+                <dt data-i18n="calc.profit">Gross profit at current price</dt>
+                <dd id="res-profit">–</dd>
+              </div>
+            </dl>
+            <p class="calc__note" id="res-note" hidden></p>
+            <p class="calc__note" data-i18n="calc.explain">The suggested price is rounded up. Many F&amp;B businesses aim for a food cost of 25 to 35 percent.</p>
+            <div class="calc__actions">
+              <button type="button" class="btn btn--secondary btn--sm" id="calc-share" data-i18n="calc.share">Copy share link</button>
+              <button type="button" class="btn btn--secondary btn--sm" id="calc-print" data-i18n="calc.print">Print</button>
+              <button type="button" class="btn btn--secondary btn--sm" id="calc-reset" data-i18n="calc.reset">New recipe</button>
+            </div>
+            <p class="calc__note" id="share-msg" role="status" hidden></p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="cta-title">
+      <div class="wrap">
+        <div class="cta-band">
+          <div>
+            <h2 id="cta-title" data-i18n="calc.ctaTitle">Save this recipe in Snouvier</h2>
+            <p data-i18n="calc.ctaBody">Snouvier deducts ingredients with every sale and keeps your food cost current when purchase prices change. Free for 14 days.</p>
+          </div>
+          <a class="btn btn--primary btn--lg" href="signup.html" data-cta="signup" data-i18n="cta.signup">Get Started</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__grid">
+      <div>
+        <p><strong>Snouvier</strong></p>
+        <p data-i18n="foot.tagline">Point of sale, inventory and reporting for F&amp;B businesses.</p>
+        <p><span data-i18n="foot.contact">Contact:</span> <a href="mailto:support@celvre.tech">support@celvre.tech</a></p>
+      </div>
+      <nav class="foot__links" aria-label="Footer navigation" data-i18n-attr-aria-label="foot.nav">
+        <a href="index.html" data-i18n="foot.home">Home</a>
+        <a href="pricing.html" data-i18n="nav.pricing">Pricing</a>
+        <a href="privacy.html" data-i18n="foot.privacy">Privacy Policy</a>
+        <a href="terms.html" data-i18n="foot.terms">Terms of Service</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+
+</html>

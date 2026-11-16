@@ -10,12 +10,13 @@ import { SITE_CONFIG, signupUrl, hasPricingSource } from '../js/config.js';
 
 const SITE = join(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (f) => readFileSync(join(SITE, f), 'utf8');
-const PAGES = ['index.html', 'pricing.html', 'signup.html', 'privacy.html', 'terms.html', 'delete-account.html', 'status.html'];
-const MARKETING = ['index.html', 'pricing.html'];
-// Dokumen hukum tetap berbahasa Indonesia (sumber: legal/dokumen-hukum.json).
-const LEGAL = ['privacy.html', 'terms.html'];
+const PAGES = ['index.html', 'pricing.html', 'food-cost-calculator.html', 'signup.html', 'privacy.html', 'terms.html',
+  'privacy-id.html', 'terms-id.html', 'delete-account.html', 'status.html'];
+const MARKETING = ['index.html', 'pricing.html', 'food-cost-calculator.html'];
+// Dokumen hukum: edisi English di terms/privacy.html, edisi Indonesia di *-id.html (#344).
+const LEGAL = ['privacy-id.html', 'terms-id.html'];
 
-test('semua halaman ada, bawaan Inggris (dokumen hukum Indonesia), dan responsif', () => {
+test('semua halaman ada, bawaan Inggris (edisi hukum Indonesia di *-id), dan responsif', () => {
   for (const p of PAGES) {
     const html = read(p);
     assert.match(html, LEGAL.includes(p) ? /<html lang="id">/ : /<html lang="en">/, p);
@@ -95,7 +96,7 @@ test('teks HTML = EN, setiap kunci punya terjemahan Indonesia, tanpa kunci yatim
   const used = new Set();
   for (const p of MARKETING) {
     const html = read(p);
-    for (const m of html.matchAll(/data-i18n="([^"]+)"[^>]*>([\s\S]*?)<\/(?:title|p|h1|h2|h3|span|a|summary)>/g)) {
+    for (const m of html.matchAll(/data-i18n="([^"]+)"[^>]*>([\s\S]*?)<\/(?:title|p|h1|h2|h3|span|a|summary|button|dt)>/g)) {
       assert.equal(m[2], EN[m[1]], `${p}: teks ${m[1]} harus sama dengan EN`);
     }
     for (const m of html.matchAll(/data-i18n(?:-attr-[a-z-]+)?="([^"]+)"/g)) used.add(m[1]);

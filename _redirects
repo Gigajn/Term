@@ -5,3 +5,6 @@
 /daftar            /signup          301
 /hapus-akun.html   /delete-account  301
 /hapus-akun        /delete-account  301
+# Kalkulator HPP: alamat pendek Indonesia untuk dibagikan di media sosial.
+/kalkulator-hpp    /food-cost-calculator?lang=id  301
+/hpp               /food-cost-calculator?lang=id  301

@@ -1,7 +1,7 @@
 # Situs pemasaran Snouvier
 
 Situs statis (tanpa build) sistem desain v2, D.10: beranda (`index.html`),
-harga (`pricing.html`), daftar (`signup.html`), hapus akun
+harga (`pricing.html`), Kalkulator HPP gratis (`food-cost-calculator.html`, logika di `js/food-cost.js`, resep dibagikan lewat `#r=` di tautan tanpa server), daftar (`signup.html`), hapus akun
 (`delete-account.html`), status, privasi, dan ketentuan. Bahasa bawaan Inggris
 (teks di HTML); tombol **ID** mengganti ke Indonesia (kamus `ID` di
 `js/i18n.js`). Privasi dan ketentuan tetap berbahasa Indonesia. Dipakai juga sebagai homepage, privacy policy, dan terms untuk Google
@@ -50,4 +50,4 @@ Jangan jadikan git terpisah di dalam folder ini.
    terms `…/terms.html`, lalu **Publish app**.
 
 ## Tes
-`node --test site/tests/*.test.mjs`; tes database: `supabase/tests/contract/public_pricing_contract_test.sql`.
+`node --test site/tests/*.test.mjs` (termasuk `food-cost.test.mjs` untuk Kalkulator HPP); tes database: `supabase/tests/contract/public_pricing_contract_test.sql`.

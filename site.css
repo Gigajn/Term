@@ -459,3 +459,77 @@ a:hover { color: var(--gf-primary-pressed); }
 .status__nilai { font-weight: 600; color: var(--gf-text-2); }
 .status__nilai[data-tingkat="normal"] { color: var(--gf-on-success-soft); }
 .status__nilai[data-tingkat="gangguan"] { color: var(--gf-danger-text); }
+
+/* ── Kalkulator HPP (food-cost-calculator.html) ─────────────────────── */
+.calc__grid { display: grid; gap: var(--gf-space-24); align-items: start; }
+@media (min-width: 1024px) { .calc__grid { grid-template-columns: minmax(0, 1fr) 340px; } }
+.calc__form, .calc__result {
+  background: var(--gf-surface);
+  border: var(--gf-stroke-card) solid var(--gf-border);
+  border-radius: var(--gf-radius-lg);
+  padding: var(--gf-space-24);
+}
+.calc__result { position: sticky; top: 88px; }
+.calc__sub { margin: var(--gf-space-24) 0 var(--gf-space-12); font-size: var(--gf-text-h3-size); line-height: var(--gf-text-h3-line); font-weight: var(--gf-text-h3-weight); }
+.calc__result .calc__sub { margin-top: 0; }
+.calc__meta { display: grid; gap: var(--gf-space-12); }
+@media (min-width: 640px) { .calc__meta { grid-template-columns: 1fr 1fr; } }
+.calc__field { display: flex; flex-direction: column; gap: var(--gf-space-4); min-width: 0; }
+.calc__field > span { color: var(--gf-text-2); font-size: var(--gf-text-caption-size); font-weight: 600; }
+.calc__field input, .calc__field select {
+  min-height: 44px;
+  width: 100%;
+  padding: 0 var(--gf-space-12);
+  font: inherit;
+  color: var(--gf-text);
+  background: var(--gf-bg);
+  border: var(--gf-stroke-input) solid var(--gf-border-input);
+  border-radius: var(--gf-radius-sm);
+  transition: border-color var(--gf-motion-fast) ease-out;
+}
+.calc__field input:focus-visible, .calc__field select:focus-visible {
+  outline: var(--gf-stroke-focus) solid var(--gf-focus-ring);
+  border-color: var(--gf-primary);
+}
+.calc__rows { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--gf-space-12); counter-reset: row; }
+.calc__row {
+  position: relative;
+  display: grid;
+  gap: var(--gf-space-8);
+  grid-template-columns: 1fr 1fr;
+  padding: var(--gf-space-12);
+  background: var(--gf-surface-2);
+  border-radius: var(--gf-radius-md);
+  animation: calc-in var(--gf-motion-medium) ease-out;
+}
+.calc__row > .calc__field:first-child { grid-column: 1 / -1; padding-right: 52px; }
+@media (min-width: 900px) {
+  .calc__row { grid-template-columns: 1.6fr 1.3fr 0.8fr 0.9fr 0.9fr 0.9fr 1.1fr 44px; align-items: end; }
+  .calc__row > .calc__field:first-child { grid-column: auto; padding-right: 0; }
+}
+.calc__cost { min-height: 44px; display: flex; align-items: center; font-weight: 700; font-variant-numeric: tabular-nums; }
+.calc__del { min-width: 44px; padding: 0; }
+.calc__row > .calc__del { position: absolute; top: var(--gf-space-12); right: var(--gf-space-12); }
+@media (min-width: 900px) { .calc__row > .calc__del { position: static; } }
+.calc__hint { grid-column: 1 / -1; margin: 0; color: var(--gf-danger-text); font-size: var(--gf-text-caption-size); }
+.calc__add { margin-top: var(--gf-space-12); }
+.calc__result dl { margin: 0; display: grid; gap: var(--gf-space-12); }
+.calc__stat { display: flex; justify-content: space-between; gap: var(--gf-space-12); align-items: baseline; }
+.calc__stat dt { color: var(--gf-text-2); }
+.calc__stat dd { margin: 0; font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; }
+.calc__stat--main dd { font-size: var(--gf-text-h2-size); line-height: var(--gf-text-h2-line); color: var(--gf-primary); }
+.calc__note { color: var(--gf-text-2); font-size: var(--gf-text-caption-size); margin: var(--gf-space-12) 0 0; overflow-wrap: anywhere; }
+.calc__actions { display: flex; flex-wrap: wrap; gap: var(--gf-space-8); margin-top: var(--gf-space-16); }
+.calc__print-title { display: none; }
+@keyframes calc-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .calc__row { animation: none; } }
+
+@media print {
+  .top, .foot, .skip, .cta-band, .calc__actions, .calc__add, .calc__del, .section__head .section__lead, .calc__note[role="status"] { display: none !important; }
+  .section { padding: 0; }
+  .calc__grid { grid-template-columns: 1fr; }
+  .calc__form, .calc__result { border: 0; padding: 0; position: static; }
+  .calc__row { break-inside: avoid; animation: none; }
+  .calc__print-title { display: block; }
+  .calc__field input, .calc__field select { border: 0; padding: 0; min-height: 0; appearance: none; background: none; }
+}

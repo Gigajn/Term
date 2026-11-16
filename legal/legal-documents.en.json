@@ -1,0 +1,193 @@
+{
+  "_catatan": "English edition of site/legal/dokumen-hukum.json (#344). Same structure and version; update both files together. Used by the app in English and to build site/terms-en.html and site/privacy-en.html: node site/tools/build-legal.mjs. If the editions differ, the Indonesian edition prevails for merchants in Indonesia.",
+  "versi": "2026-11-08",
+  "berlaku": "8 November 2026",
+  "kontak": "support@celvre.tech",
+  "kontakPrivasi": "privacy@celvre.tech",
+  "dokumen": [
+    {
+      "id": "terms",
+      "judul": "Terms of Service",
+      "pembuka": "These Terms govern the use of Snouvier, a subscription service for point of sale, stock, warehouse, and reporting for food and beverage businesses. By creating an account or using Snouvier, you agree to these Terms.",
+      "bagian": [
+        {
+          "judul": "1. Definitions",
+          "poin": [
+            "Snouvier, we, or us: the operator of the Snouvier service, including the Android app, the web app, and the snouvier-web.celvre.tech website.",
+            "Merchant: a business that registers for and subscribes to Snouvier, with one or more outlets and warehouses.",
+            "Merchant Owner: the person who registers the Merchant and is responsible for the Merchant account.",
+            "User: the Merchant Owner and staff granted access by the Merchant Owner, such as Outlet Admins, Cashiers, and Warehouse Admins.",
+            "Customer: a buyer at a Merchant outlet, including those who order through Self-Order or the WhatsApp Assistant."
+          ]
+        },
+        {
+          "judul": "2. Accounts",
+          "paragraf": [
+            "You must be at least 18 years old and provide accurate information when registering. The Merchant Owner is responsible for all activity in the Merchant account, including the activity of staff granted access.",
+            "Keep your password, PIN, and Two-Step Verification codes confidential. Notify us immediately if the account is used without permission. The Merchant Owner may revoke staff access at any time."
+          ]
+        },
+        {
+          "judul": "3. Subscriptions and payment",
+          "poin": [
+            "Each new Merchant receives a 14-day Free Trial with the limits shown on the Pricing page. After that, the Merchant must choose a paid Subscription Plan to continue using Snouvier.",
+            "The price and limits of each plan are shown at snouvier-web.celvre.tech/pricing.html and in the app. Price changes are announced at least 30 days before they apply to the next billing period.",
+            "Payments are processed by third-party payment providers. A subscription is valid for the paid period and is not renewed automatically without a new payment.",
+            "If an invoice is unpaid, a 7-day grace period applies. After that, new transactions are paused, but the Merchant Owner can still view and export all data.",
+            "Fees already paid are not refunded, except when the service cannot be used because of our fault or when required by law."
+          ]
+        },
+        {
+          "judul": "4. Prohibited use",
+          "paragraf": [
+            "You must not use Snouvier to:"
+          ],
+          "poin": [
+            "sell goods or services prohibited by applicable law;",
+            "record fake transactions, launder money, or evade taxes;",
+            "send spam or unsolicited messages through the WhatsApp Assistant;",
+            "attempt to breach, load-test, or reverse-engineer Snouvier systems, or access another Merchant's data;",
+            "resell or rent access to Snouvier without our written permission."
+          ]
+        },
+        {
+          "judul": "5. Merchant data",
+          "paragraf": [
+            "Data you record in Snouvier, such as menus, stock, transactions, customers, and reports, remains the property of the Merchant. You grant us permission to store and process that data only to provide the service, as described in the Privacy Policy.",
+            "Each Merchant's data is kept separate from other Merchants. The Merchant Owner can export data at any time through Import & Export and Backup. Data is not deleted automatically while the account exists; deletion happens on request, as described on the Delete Account page.",
+            "The Merchant is responsible for the Customer data it records, including informing Customers and obtaining consent where required by law.",
+            "For Customer data, these Terms together with the Privacy Policy serve as a data processing agreement: we process Customer data only on the Merchant's instructions, keep it confidential, use the service providers listed in the Privacy Policy, help the Merchant respond to Customer requests, and delete or return the data when the service ends.",
+            "Benchmark Data Consent is optional and off by default. If the Merchant Owner turns it on under Privacy & Data, sales data is used anonymously to compare similar outlets, and is shared with financial partners only when the Merchant itself applies. The consent can be turned off at any time."
+          ]
+        },
+        {
+          "judul": "6. Third-party services",
+          "paragraf": [
+            "Some features use third-party services, such as QRIS and payment gateways, WhatsApp, courier services, Google sign-in, and artificial intelligence for reading receipts. Use of those services is also subject to their providers' terms. We are not responsible for outages, fees, or decisions of third-party providers."
+          ]
+        },
+        {
+          "judul": "7. Service availability",
+          "paragraf": [
+            "Snouvier's Availability Target is 99.5% per month, monitored on the status page. If the target is missed, affected Merchants receive additional free subscription days in proportion to the outage, not monetary compensation. Scheduled maintenance is planned outside peak hours where possible and is not counted as an outage.",
+            "The WhatsApp Assistant and WhatsApp Receipts that use an unofficial WhatsApp connection are not covered by the Availability Target, because they depend on WhatsApp services outside our control.",
+            "Without internet, the cashier can still accept cash and synchronizes data once back online; features such as QRIS and reports wait for a connection.",
+            "We may update, add, or discontinue features. Changes that reduce the core functions of a paid plan are announced in advance."
+          ]
+        },
+        {
+          "judul": "8. Limitation of liability",
+          "paragraf": [
+            "Snouvier is a record-keeping tool. The Merchant remains responsible for the accuracy of its prices, stock, bookkeeping, and tax obligations. To the extent permitted by law, we are not liable for indirect losses, lost profits, or losses caused by input errors, devices, or networks belonging to Users. Our total liability is limited to the subscription fees the Merchant paid in the last 3 months."
+          ]
+        },
+        {
+          "judul": "9. Termination",
+          "paragraf": [
+            "The Merchant Owner may stop subscribing at any time. We may suspend or close accounts that violate these Terms, after giving prior notice unless the violation endangers other Users or the system.",
+            "Data of a Merchant that stops subscribing is kept for 12 months so the Merchant can return or export it, and is then deleted. The Merchant Owner can request earlier deletion through the Delete Account page."
+          ]
+        },
+        {
+          "judul": "10. Governing law and changes",
+          "paragraf": [
+            "These Terms are governed by the laws of the Republic of Indonesia. Disputes are first resolved amicably; if no agreement is reached, through the district court where the operator of Snouvier is domiciled.",
+            "We may update these Terms. Material changes are announced in the app or by email, and Users are asked to accept the new version. The latest version is always available on this page."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "privacy",
+      "judul": "Privacy Policy",
+      "pembuka": "This Policy explains what personal data Snouvier collects, why, with whom it is shared, and your rights, in accordance with Indonesian Law No. 27 of 2022 on Personal Data Protection.",
+      "bagian": [
+        {
+          "judul": "1. Our role",
+          "paragraf": [
+            "For the account data of Merchant Owners and staff, Snouvier is the data controller. For Customer data recorded by a Merchant, such as a buyer's name and phone number, the Merchant is the data controller and Snouvier processes it on the Merchant's behalf."
+          ]
+        },
+        {
+          "judul": "2. Data we collect",
+          "poin": [
+            "Account data: name, email, phone number, business name, outlet address, and password (stored encrypted). If you use Sign in with Google: name, email, and profile photo. We do not access Gmail, Drive, contacts, or other Google data.",
+            "Operational data: menus, prices, stock, transactions, shifts and working hours, expenses, credit sales, points, and reports recorded in the app.",
+            "Customer data recorded by the Merchant: name, phone number, order history, credit sales, and points. If the WhatsApp Assistant is active: the content of Customer messages to the Merchant's WhatsApp number.",
+            "Customer WhatsApp numbers for WhatsApp Receipts: stored only if the Customer consents, together with a record of who recorded that consent. Without consent, the number is used only on the cashier's phone to open WhatsApp and is not sent to the server.",
+            "Subscription payment data: invoice status and history. Card numbers and bank details are processed directly by the payment provider and are not stored by us.",
+            "Device and technical data: device type, app version, IP address, error logs, and security verification (captcha) tokens.",
+            "Device permissions used only while the related feature is in use: camera (scanning QR codes and photographing receipts or products), Bluetooth (receipt printers), and notification access (only if the Merchant turns on GoPay QRIS Verification, to read payment notifications from the GoPay Merchant app; other notifications are ignored)."
+          ]
+        },
+        {
+          "judul": "3. How data is used",
+          "poin": [
+            "to provide the service: sign-in, recording sales, stock, reports, and synchronization across devices;",
+            "to send requested emails, such as verification codes, scheduled reports, and billing notices;",
+            "for security: preventing abuse, Two-Step Verification, and auditing data changes;",
+            "for customer support and fixing errors;",
+            "for anonymous benchmarks across outlets, only for Merchants that turn on Benchmark Data Consent;",
+            "to meet legal obligations, such as invoice bookkeeping."
+          ],
+          "paragraf": [
+            "Data is not sold, not used for advertising, and not used to train artificial intelligence models."
+          ]
+        },
+        {
+          "judul": "4. Who processes data",
+          "paragraf": [
+            "We use the following service providers, only to the extent required for the related feature. Some providers process data outside Indonesia with equivalent safeguards:"
+          ],
+          "poin": [
+            "Supabase: database, sign-in, and file storage;",
+            "Cloudflare: website and web app hosting, network protection, Turnstile captcha, and encrypted backup storage (R2);",
+            "Resend and Google: email delivery; Google also for Sign in with Google and the AI receipt reader (Gemini);",
+            "Midtrans: subscription payments and QRIS;",
+            "Biteship and courier services: order delivery, if used by the Merchant;",
+            "WhatsApp: WhatsApp Assistant messages, if turned on by the Merchant."
+          ]
+        },
+        {
+          "judul": "5. Storage and security",
+          "paragraf": [
+            "Data is transmitted encrypted (HTTPS) and stored in a database with access rules per Merchant and per role: staff see only the data of the outlet where they work, and a Merchant cannot see another Merchant's data. Merchant Owner and Snouvier Owner accounts must use Two-Step Verification.",
+            "Backups are made every night, encrypted before leaving the server, stored outside the main database for 30 days, and tested for restoration every month.",
+            "Data is kept while the account is active. Data of a Merchant that stops subscribing is kept for 12 months and then deleted. Data of Customers with no transactions for 3 years is anonymized. After an account deletion request, data is deleted within 30 days, except records that must be kept by law, such as invoice records, which are kept until the retention period ends."
+          ]
+        },
+        {
+          "judul": "6. Your rights",
+          "poin": [
+            "to receive information about and a copy of your personal data;",
+            "to correct inaccurate data;",
+            "to request deletion of your account and data (see snouvier-web.celvre.tech/delete-account.html);",
+            "to withdraw consent and object to certain processing;",
+            "to file a complaint with the personal data protection authority."
+          ],
+          "paragraf": [
+            "Send requests to the contact address below. We respond within 14 days. Customers of a Merchant should contact that Merchant first, because the Merchant manages their data. Google access can be revoked at myaccount.google.com/permissions."
+          ]
+        },
+        {
+          "judul": "7. Children",
+          "paragraf": [
+            "Snouvier is intended for businesses and not for children under 18. We do not knowingly collect children's data."
+          ]
+        },
+        {
+          "judul": "8. Data breaches",
+          "paragraf": [
+            "If a personal data protection failure occurs, we notify affected Users and the relevant authority in writing no later than 3 x 24 hours after becoming aware of it, as required by the Personal Data Protection Law. The notice describes the affected data, when and how the incident occurred, and the handling and recovery steps. For Customer data, we notify the Merchant so the Merchant can inform its Customers."
+          ]
+        },
+        {
+          "judul": "9. Changes to this policy",
+          "paragraf": [
+            "This Policy may be updated. Material changes are announced in the app or by email before they take effect. The latest version is always available on this page."
+          ]
+        }
+      ]
+    }
+  ]
+}
